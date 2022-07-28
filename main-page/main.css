@@ -95,6 +95,7 @@ main section + section
   position: relative;
   align-items: center;
   padding: 2rem;
+  max-width: 100%;
   justify-content: center;
   gap: 10rem;
 }
@@ -321,7 +322,7 @@ main section + section
 {
   background-color: var(--clr-primary-blue);
   border-radius: 20rem;
-  width: 75%;
+  width: 10rem;
   aspect-ratio: 1;
   
 }
@@ -421,9 +422,18 @@ main section + section
 
 @media screen and (max-width: 767px)
 {
+  .container
+  {
+    margin: auto;
+  }
   .three-tabs
   {
     flex-direction: column;
+  }
+  .row
+  {
+    width: min(100%, 40rem);
+    margin: auto;
   }
   .card 
   {
@@ -433,9 +443,30 @@ main section + section
   {
     display: none;
   }
-  
+  .about
+  {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .mission
+  {
+    width: 100%;
+  }
+  .mission .title
+  {
+    border-radius: 0;
+  }
+  .about .partners
+  {
+    flex-direction: row;
+  }
   .mission > p
   {
     padding: .5rem;
+  }
+  .options .title
+  {
+    width: 100%;
+    border-radius: 0;
   }
 }

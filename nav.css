@@ -16,6 +16,7 @@
    --fw-bold-heading: 700;
    --fw-extra-bold: 900;
 
+   --fs-300: 1rem;
    --fs-400: 1.125rem;
    --fs-500: 1.25rem;
    --fs-600: 1.5rem;
@@ -217,7 +218,7 @@ nav li:hover a
 }
 #search
 {
-
+  font-family: var(--ff-body);
   width: 0px;
   transition: 0.4s;
 }
@@ -228,6 +229,27 @@ nav li:hover a
 .search-wrap[visible='true']
 {
    border: 1px solid lightgrey;
+}
+.results-display
+{
+    top: 3.5rem;
+    position: absolute;
+    display: grid;
+    overflow: auto;
+}
+.results-display a
+{
+    color: black;
+    border: 1px solid black;
+    padding: .5rem;
+    background-color: white;
+}
+.results-div
+{
+    justify-content: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 .nav-btn
 {
@@ -433,9 +455,6 @@ footer .socials
     margin-left: 2rem;
   }
 
-  footer
-  {
-    flex-direction: column;
-  }
+  
 }
 

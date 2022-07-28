@@ -1,4 +1,4 @@
-let articles = [];
+//let articles = [];
 fetchAPI();
 document.querySelectorAll('.progress-bar').forEach(calculateProgress);
 const checkProgress = () => 

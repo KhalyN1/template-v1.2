@@ -36,14 +36,14 @@
                 <li><a href="#"> STUDIAZA </a></li>
             </ul>
 
-            <div class="search-wrap" visible="false">
-                <input type = "text" id="search" placeholder="Search.." visible="false">
-                <button class="search-btn"></button>
-            </div> 
+            <div class = "results-div">
+                <div class="search-wrap" visible="false">
+                    <input type = "text" id="search" placeholder="Search.." onfocus="GetArticles()" onblur = "ClearResults()" visible="false">
+                    <button class="search-btn"></button>
+                </div> 
+                <div class = "results-display" visible = "false"></div>
+            </div>
 
-            <button class="nav-btn" id="solicita">
-               SOLICITA
-            </button>
         </nav>
     </header>
     <div class="popup">
