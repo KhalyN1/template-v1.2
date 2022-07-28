@@ -1,0 +1,25 @@
+[
+    {
+        "heading": "Titlu 1",
+        "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis ut placeat iste, delectus quasi perferendis saepe, perspiciatis dolor vitae repellat assumenda, alias error natus id consequatur magnam nemo odio culpa! Earum odit labore velit commodi dolorem, debitis dolore architecto esse magnam officia sed ut quo sint, similique vero necessitatibus optio!",
+        "url": "../articole/article1"
+    },
+
+    {
+        "heading": "Titlu 2",
+        "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis ut placeat iste, delectus quasi perferendis saepe, perspiciatis dolor vitae repellat assumenda, alias error natus id consequatur magnam nemo odio culpa! Earum odit labore velit commodi dolorem, debitis dolore architecto esse magnam officia sed ut quo sint, similique vero necessitatibus optio!",
+        "url": "../articole/article2"
+    },
+
+    {
+        "heading": "Titlu 3",
+        "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis ut placeat iste, delectus quasi perferendis saepe, perspiciatis dolor vitae repellat assumenda, alias error natus id consequatur magnam nemo odio culpa! Earum odit labore velit commodi dolorem, debitis dolore architecto esse magnam officia sed ut quo sint, similique vero necessitatibus optio!",
+        "url": "../articole/article3"
+    },
+
+    {
+        "heading": "Titlu 4",
+        "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis ut placeat iste, delectus quasi perferendis saepe, perspiciatis dolor vitae repellat assumenda, alias error natus id consequatur magnam nemo odio culpa! Earum odit labore velit commodi dolorem, debitis dolore architecto esse magnam officia sed ut quo sint, similique vero necessitatibus optio!",
+        "url": "../articole/article4"
+    }
+]

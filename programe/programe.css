@@ -1,0 +1,193 @@
+:root
+{
+   --clr-primary-blue: hsl(224, 100%, 21%);
+   --clr-primary-red: hsl(0, 89%, 28%);
+   --clr-accent-red: hsl(2, 82%, 41%);
+   --clr-neutral-offwhite: hsl(0, 0%, 91%);
+
+   --ff-heading: 'Be Vietnam Pro', sans-serif;
+   --ff-cursive: 'Caveat', cursive;
+   --ff-body: 'Source Sans Pro', sans-serif;
+
+   --fw-light: 300;
+   --fw-regular: 400;
+   --fw-semi-bold: 500;
+   --fw-bold-body: 600;
+   --fw-bold-heading: 700;
+   --fw-extra-bold: 900;
+
+   --fs-400: 1.125rem;
+   --fs-500: 1.25rem;
+   --fs-600: 1.5rem;
+   --fs-700: 2rem;
+   --fs-900: 2.5rem;
+}
+
+*, *::before, *::after 
+{
+  box-sizing: border-box;
+}
+  
+* 
+{
+  margin: 0;
+}
+
+html
+{
+ scroll-behavior: smooth;
+ scroll-padding-top: 10%;
+}
+html, body 
+{
+  height: 100%;
+}
+ 
+body 
+{
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+ 
+  img, picture, video, canvas, svg 
+{
+  display: block;
+  max-width: 100%;
+}
+ 
+input, button, textarea, select 
+{
+  font: inherit;
+  border: none;
+  outline: none;
+}
+ 
+p, h1, h2, h3, h4, h5, h6 
+{
+  overflow-wrap: break-word;
+}
+h1
+{
+    font-family: var(--ff-heading);
+}
+p
+{
+  font-family: var(--ff-body);
+}
+#root, #__next 
+{
+  isolation: isolate;
+}
+a
+{
+  text-decoration: none;
+}
+button
+{
+  font-weight: var(--fw-bold-heading);
+  font-size: var(--fs-500);
+  font-family: var(--ff-body);
+  cursor: pointer;
+}
+
+.mosaic
+{
+    padding-block: 5%;
+    padding-inline: 10%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: .25rem;
+}
+
+.mosaic-card
+{
+   position: relative;
+   background-size: 100%;
+   padding: 25%;
+   display: flex;
+   text-align: center;
+   align-items: center;
+   justify-content: center;
+
+}
+.mosaic-text
+{
+  position: absolute;
+  top: 50%;
+  right: 25%;
+
+  left: 25%;
+  font-size: var(--fs-600);
+  font-weight: var(--fw-bold-body);
+  display: none;
+  color: white;
+}
+.mosaic-card:hover .mosaic-text
+{
+  display: block;
+}
+.mosaic-card::before
+{
+   content: '';
+   position: absolute;
+   inset: 0;
+   opacity: 0.3;
+   isolation: isolate;
+   z-index: -1;
+}
+.mosaic-card:hover::before,
+.mosaic-card:focus::before
+{
+  background-color: black;
+}
+.grid-col-span-2
+{
+
+   grid-column: span 2;
+   padding: 12.5%;
+}
+.grid-row-span-2
+{
+    grid-row: span 2;
+    padding: 12.5%;
+}
+
+#first
+{
+    background-image: url('../imgs/forest-road.jpg');
+    clip-path: polygon(86% 0, 100% 63%, 57% 100%, 0 80%, 0 0);
+}
+
+#second
+{
+    background-image: url('../imgs/mountain-forest-sm.jpg');
+    clip-path: polygon(100% 0, 100% 100%, 20% 100%, 21% 30%, 0 0);
+    margin-left: -20%;
+}
+#third
+{
+    background-image: url('../imgs/mountain-sm.jpg');
+    clip-path: polygon(0 0, 100% 15%, 83% 83%, 0 83%, 0 0);
+    margin-top: -7%;
+}
+
+#fourth
+{
+    background-image: url('../imgs/school.jpg');
+    clip-path: polygon(28% 37%, 100% 6%, 100% 100%, 0 100%, 16% 34%);
+    margin-top: -20%;
+    margin-left: -18%;
+}
+
+#fifth
+{
+    background-image: url('../imgs/school-classroom.jpg');
+    clip-path: polygon(83% 0, 78% 16%, 100% 16%, 100% 100%, 0 100%, 0 0);
+    margin-top: -7%;
+}
+
+#sixth
+{
+    background-image: url('../imgs/water.jpg');
+
+}

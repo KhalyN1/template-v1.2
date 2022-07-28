@@ -1,0 +1,179 @@
+:root
+{
+   --clr-primary-blue: hsl(224, 100%, 21%);
+   --clr-primary-red: hsl(0, 89%, 28%);
+   --clr-accent-red: hsl(2, 82%, 41%);
+   --clr-neutral-offwhite: hsl(0, 0%, 91%);
+
+   --ff-heading: 'Be Vietnam Pro', sans-serif;
+   --ff-cursive: 'Caveat', cursive;
+   --ff-body: 'Source Sans Pro', sans-serif;
+
+   --fw-light: 300;
+   --fw-regular: 400;
+   --fw-semi-bold: 500;
+   --fw-bold-body: 600;
+   --fw-bold-heading: 700;
+   --fw-extra-bold: 900;
+
+   --fs-400: 1.125rem;
+   --fs-500: 1.25rem;
+   --fs-600: 1.5rem;
+   --fs-700: 2rem;
+   --fs-900: 2.5rem;
+}
+
+*, *::before, *::after 
+{
+  box-sizing: border-box;
+}
+  
+* 
+{
+  margin: 0;
+}
+
+html 
+{
+  height: 100%;
+}
+ 
+body 
+{
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+ 
+  img, picture, video, canvas, svg 
+{
+  display: block;
+  max-width: 100%;
+}
+ 
+input, button, textarea, select 
+{
+  font: inherit;
+  border: none;
+  outline: none;
+}
+ 
+p, h1, h2, h3, h4, h5, h6 
+{
+  overflow-wrap: break-word;
+}
+h1, h2
+{
+    font-family: var(--ff-heading);
+}
+p
+{
+    font-family: var(--ff-body);
+}
+#root, #__next 
+{
+  isolation: isolate;
+}
+a
+{
+  text-decoration: none;
+}
+main
+{
+    margin-top: 5%;
+}
+.page-title, .desc
+{
+    text-align: center;
+    padding: .5rem;
+}
+.page-title
+{
+    
+    font-size: var(--fs-900);
+    font-weight: var(--fw-extra-bold);
+}
+
+.desc
+{
+    font-size: var(--fs-600);
+    font-family: var(--ff-heading);
+    font-weight: var(--fw-regular);
+}
+
+.container
+{
+    display: flex;
+    gap: 5rem;
+    max-width: 70vw;
+    margin-inline: auto;
+    padding: 5rem;
+    align-items: center;
+    justify-content: center;
+}
+ul[disc]
+{
+    list-style: disc;
+}
+ul[disc] > li
+{
+    padding-block: .75rem;
+    font-size: var(--fs-300);
+    font-weight: var(--fw-regular);
+}
+
+.card
+{
+    flex-basis: 100%;
+    padding: 1rem;
+    border: 1px solid black;
+    color: black;
+}
+.card:hover,
+.card:focus
+{
+    color: white;
+    background-color: var(--clr-primary-blue);
+    transform: scale(1.1);
+    transition: all 0.3s ease-out;
+}
+
+.card > h2
+{
+    text-align: center;
+}
+@media (max-width: 767px) 
+{
+    main
+    {
+        margin-top: 15%;
+    }
+    .page-title
+    {
+      padding: 2rem;
+    }
+    .container
+    {
+        max-width: 90vw;
+    }
+}
+
+@media (max-width: 1024px)
+{
+    .container
+    {
+        max-width: 90vw;
+        flex-direction: column;
+    }
+    main
+    {
+        margin-top: 10%;
+    }
+}
+
+@media (min-width: 1600px)
+{
+    .container
+    {
+        max-width: 50vw;
+    }
+}
