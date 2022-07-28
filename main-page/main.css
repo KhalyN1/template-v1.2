@@ -85,7 +85,7 @@ main
 {
   margin-top: 10%;
 }
-section + section
+main section + section
 {
   margin-top: 10rem;
 }

@@ -320,12 +320,15 @@ footer .socials
   
 }
 
-.parters ul
+.partners ul
 {
   display: flex;
   flex-direction: column;
 }
-.mapouter{
+
+/*
+.mapouter
+{
   position: relative;
   text-align: right; 
   height: 150px;
@@ -339,7 +342,7 @@ footer .socials
   height: 150px;
   width: 150px;
 }
-
+*/
 @media screen and (max-width: 1024px) 
 {
     nav ul
