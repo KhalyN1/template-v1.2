@@ -192,11 +192,11 @@ main > * + *
     border: 1px solid gray;
     border-radius: .125rem;
 }
-.country:hover, .country:focus
+.country.active, .country:hover
 {
    border: 1px solid var(--clr-lightblue);
 }
-.country:hover.country > h3, .country:focus.country > h3
+.country.active > h3, .country:hover > h3
 {
     font-weight: var(--fw-bold-body);
     color: var(--clr-lightblue);
@@ -239,14 +239,14 @@ main > * + *
 }
 .currency-options
 {
-    margin-left: 3rem;
+    margin-left: 2rem;
     
 }
 select
 {
     border: 1px solid black;
     font-size: var(--fs-300);
-    padding: .25em;
+    padding: .25em .5em;
 }
 #cost-range::-webkit-slider-thumb
 {
@@ -271,6 +271,22 @@ select
     cursor: pointer;
 }
 
+.checkbox-container
+{
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.checkbox
+{
+  width: 1.125rem;
+  accent-color: var(--clr-primary-blue);
+  aspect-ratio: 1;
+}
+#dorms-label
+{
+  font-size: var(--fs-400);
+}
 .tip
 {
     font-size: var(--fs-400);
