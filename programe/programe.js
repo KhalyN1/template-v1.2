@@ -1,5 +1,3 @@
-//let articles = [];
-fetchAPI();
 document.querySelectorAll('.progress-bar').forEach(calculateProgress);
 const checkProgress = () => 
 {
@@ -18,43 +16,10 @@ document.addEventListener('click', e => {
         {
             handleClick(handle);
         }
-        
-     })
+})
 
-function fetchAPI()
+function calculateProgress(progressBar)
 {
-    fetch('http://localhost:5000/')
-     .then(res => res.json())
-     .then(data =>
-     {
-        data.forEach(article =>
-          {
-            let cardContainer = document.createElement('a');
-            cardContainer.classList.add('card-container');
-            cardContainer.href = article.url;
-       
-            let card = document.createElement('div');
-            card.classList.add('card');
-       
-            let headline = document.createElement('h1');
-            headline.textContent = article.heading;
-       
-            let body = document.createElement('p');
-            body.textContent = article.body;
-       
-            document.querySelector('.slider').appendChild(cardContainer);
-            cardContainer.appendChild(card);
-       
-            card.appendChild(headline);
-            card.appendChild(body);
-          })
-       })
-}
-
-async function calculateProgress(progressBar)
-{
-     
-      
        progressBar.innerHTML = '';
        const slider = document.querySelector('.slider');
        const itemCount = slider.children.length;
@@ -80,13 +45,11 @@ function handleClick(handle)
         const progressBar = handle.closest('.row').querySelector('.progress-bar');
         const slider = document.querySelector('.slider');
         const sliderIndex = parseInt(
-            getComputedStyle(slider).getPropertyValue('--slider-index'))
-           
+            getComputedStyle(slider).getPropertyValue('--slider-index'));
         const itemCount = slider.children.length;
         const itemsPerScreen = parseInt(
              getComputedStyle(slider).getPropertyValue('--items-per-screen'));
         const progressBarItemCount = Math.ceil(itemCount / itemsPerScreen);
-        
         if (handle.classList.contains('left'))
         {
             if (sliderIndex <= 0)
@@ -124,4 +87,3 @@ function handleClick(handle)
               
         }
 }
-

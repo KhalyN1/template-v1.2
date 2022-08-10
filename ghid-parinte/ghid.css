@@ -22,7 +22,7 @@
    --fs-700: 2rem;
    --fs-900: 2.5rem;
 
-   --inset-inline: 50vw;
+   --inset-inline: 54.5vw;
 }
 
 *, *::before, *::after 
@@ -97,12 +97,11 @@ ul[list-none]
     background-color: var(--clr-neutral-offwhite);
     position: fixed;
     left: 0;
-    top: 4%;
     display: flex;
     gap: 2rem;
     flex-direction: column;  
-    padding: 2.5rem 1.5rem; 
-    height: 96%;
+    padding-inline: 3.5rem; 
+    padding-block: 5rem 35rem;
 
 }
 .sidebar ul
@@ -129,9 +128,9 @@ ul[list-none]
     font-weight: var(--fw-bold-body);
 }
 
-main
+ .main-text
 {
-    margin-left: 17.5rem;
+    margin-left: 20rem;
     margin-top: 5vh;
     padding: 2rem .5rem;
     height: 95%;
@@ -143,7 +142,7 @@ main h1
   padding-block: .5rem;
   color: var(--clr-primary-blue);
 }
-main h2
+.main-text h2
 {
   font-size: var(--fs-600);
 }
@@ -154,7 +153,7 @@ main h2
     padding-block: .5rem;
 }
 
-main p
+.main-text p
 {
     padding-block: .75rem;
     font-size: var(--fs-500);
@@ -204,10 +203,10 @@ main span
   }
   .sidebar-btn[sidebar-active='true']
   {
-    transform: translateX(calc(var(--inset-inline) - 1.05rem));
+    transform: translateX(calc((100vw - var(--inset-inline)) - 1.05rem));
   }
   
-  main 
+  .main-text 
   {
     margin-left: 5%;
     max-width: 90%;

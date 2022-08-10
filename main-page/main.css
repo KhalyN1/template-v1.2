@@ -3,6 +3,7 @@
    --clr-primary-blue: hsl(224, 100%, 21%);
    --clr-primary-red: hsl(0, 89%, 28%);
    --clr-accent-red: hsl(2, 82%, 41%);
+   --clr-light-red: hsl(2, 32%, 84%);
    --clr-neutral-offwhite: hsl(0, 0%, 91%);
 
    --ff-heading: 'Be Vietnam Pro', sans-serif;
@@ -36,6 +37,7 @@
 html
 {
   height: 100%;
+  overflow-x: hidden;
 }
  
 body 
@@ -85,7 +87,7 @@ main
 {
   margin-top: 10%;
 }
-main section + section
+main > * + *
 {
   margin-top: 10rem;
 }
@@ -265,12 +267,12 @@ main section + section
  {
     min-width: 1rem;
     aspect-ratio: 1;
-    background-color: lightgray;
+    background-color: var(--clr-light-red);
     border-radius: 1rem;
 }
   
 .progress-item.active {
-    background-color: gray;
+    background-color: var(--clr-accent-red);
 }
 .about
 {
@@ -326,6 +328,12 @@ main section + section
   aspect-ratio: 1;
   
 }
+.options
+{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 .options .title
 {
   background-color: var(--clr-neutral-offwhite);
@@ -350,6 +358,7 @@ main section + section
 .img-slider
 {
   overflow: hidden;
+  width: 200vw;
   
 }
 
@@ -357,13 +366,41 @@ main section + section
 {
   display: flex;
 }
+.button-section
+{
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  width: 100%;
+  white-space: nowrap;
+  animation: scrolling 10s linear infinite;
+}
+.slider-btn
+{
+  aspect-ratio: 1;
+  width: 100%;
+  background: url('../imgs/nyu-logo.png') no-repeat;
+  background-size: 100%;
+  background-color: transparent;
+  position: relative; 
+}
+.slider-btn::before
+{
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+.slider-btn:hover::before
+{
+  background-color: red;
+}
 .img-slider-content > img
 {
   display: flex;
   align-items: center;
   justify-content: center;
-  white-space: nowrap;
-  animation: scrolling 20s linear infinite;
+  
 }
 @keyframes scrolling
 {
@@ -373,7 +410,7 @@ main section + section
      }
     100%
     {
-      transform: translateX(-172vw);
+      transform: translateX(-100vw);
     }
 }
 
@@ -383,6 +420,20 @@ main section + section
   {
     flex-direction: column;
   }
+  .tab:first-child
+{
+  margin-top: 2rem;
+}
+.tab:nth-child(2)
+{
+  margin-top: 2rem;
+  margin-bottom: 0;
+}
+.tab:last-child
+{
+  margin-top: 2rem;
+  margin-bottom: 0;
+}
  
 }
 @media screen and (max-width: 1024px) {

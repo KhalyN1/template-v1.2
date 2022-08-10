@@ -1,5 +1,5 @@
 const express = require('express');
-const PORT = 5500;
+const PORT = 5000;
 
 const articles = require('./articles.json');
 const app = express();

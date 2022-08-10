@@ -128,8 +128,10 @@ ul[no-style]
 }
 #brand-link
 {
-    padding-inline: 5rem;
+    margin-top: .25em;
+    padding-inline: 7rem;
     font-size: var(--fs-600);
+    display: flex;
     font-weight: var(--fw-bold-heading);
     font-family: var(--ff-heading);
     color: var(--clr-accent-red);
@@ -251,9 +253,15 @@ nav li:hover a
 .results-display a
 {
     color: black;
+    text-align: center;
     border: 1px solid black;
+    border-top: none;
     padding: .5rem;
     background-color: white;
+}
+.results-display >  a:first-child
+{
+  border-top: 1px solid black;
 }
 .results-div
 {
@@ -326,7 +334,11 @@ nav li:hover a
     aspect-ratio: 1;
     border-radius: 1.5rem;
 }
-
+main
+{
+  margin-top: 5%;
+  margin-bottom: 10%;
+}
 footer
 {
 

@@ -1,8 +1,10 @@
 :root
 {
    --clr-primary-blue: hsl(224, 100%, 21%);
+   --clr-gradient-darkblue: linear-gradient(to right, #141e30, #243b55);
    --clr-primary-red: hsl(0, 89%, 28%);
    --clr-accent-red: hsl(2, 82%, 41%);
+   --clr-light-red: hsl(2, 32%, 84%);
    --clr-neutral-offwhite: hsl(0, 0%, 91%);
 
    --ff-heading: 'Be Vietnam Pro', sans-serif;
@@ -21,6 +23,8 @@
    --fs-600: 1.5rem;
    --fs-700: 2rem;
    --fs-900: 2.5rem;
+
+   --slider-padding: 2rem;
 }
 
 *, *::before, *::after 
@@ -46,6 +50,7 @@ html, body
 body 
 {
   line-height: 1.5;
+  background: var(--clr-neutral-offwhite);
   -webkit-font-smoothing: antialiased;
 }
  
@@ -66,7 +71,7 @@ p, h1, h2, h3, h4, h5, h6
 {
   overflow-wrap: break-word;
 }
-h1
+h1, h2
 {
     font-family: var(--ff-heading);
 }
@@ -90,6 +95,193 @@ button
   cursor: pointer;
 }
 
+.grid
+{
+  display: grid;
+}
+.programs
+{
+  padding-inline: max(2rem, 5vw);
+  --items-per-row: 3;
+  grid-template-columns: repeat(var(--items-per-row), 1fr);
+  gap: max(2rem, 10vw);
+  margin-bottom: 10rem;
+  position: relative;
+  
+}
+.programs::before
+{
+   content: '';
+
+   inset: 0;
+   position: absolute;
+   z-index: -1;
+   background: var(--clr-gradient-darkblue);
+   clip-path: polygon(0 0, 100% 35%, 100% 100%, 0 65%);
+}
+
+.card
+{
+  
+  aspect-ratio: 1;
+  position: relative;
+  border-radius: 20px;
+  padding: 1em;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  color: white;
+  font-size: var(--fs-600); 
+}
+.programs > .card
+{
+  width: 100%;
+  background-image: url('../imgs/mountain-forest.jpg');
+  background-size: 105%;
+  background-repeat: no-repeat;
+  isolation: isolate;
+  -webkit-box-shadow: 5px 5px 20px 2px rgba(0,0,0,0.5); 
+  box-shadow: 5px 5px 20px 2px rgba(0,0,0,0.5);
+}
+.programs > .card::before
+{
+  content: '';
+  z-index: -1;
+  border-radius: 15px;
+  opacity: 0.3;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent, var(--clr-accent-red) ,var(--clr-primary-blue));
+}
+.programs > .card:hover
+{
+  background-size: 110%;
+}
+
+.row 
+{
+  
+  display: flex;
+  padding-block: 2rem;
+  flex-direction: column;
+}
+.container
+{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.slider
+{
+  --slider-index: 0;
+  --items-per-screen: 5;
+  transform: translateX(calc(var(--slider-index) * (-100% - 2rem)));
+  width: calc(100% - 2 * var(--slider-padding));
+  display: flex;
+  flex-grow: 1;
+  transition: transform .25s;
+}
+.slider > .card
+{
+  flex: 0 0 calc(100% / var(--items-per-screen));
+  max-width: calc(100% / var(--items-per-screen));
+  padding: 1rem;
+  
+}
+.slider > .card:nth-child(5), .slider > .card:nth-child(10)
+{
+  margin-right: 2rem;
+}
+.card-img
+{
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 15px;
+  padding: .5rem;
+  object-fit: cover;
+  z-index: -2;
+  position: absolute;
+  inset: 0;
+}
+
+.card h2
+{
+  z-index: 1;
+  
+}
+.slider > .card::before
+{
+  content: ' ';
+  inset: .5rem;
+  border-radius: 15px;
+  background: linear-gradient(to bottom, transparent, black);
+  opacity: 0.5;
+  position: absolute;
+}
+.handle
+{
+  width: 2rem;
+  aspect-ratio: 1;
+  z-index: 9;
+  flex-grow: 0;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.progress-bar
+{
+ 
+    padding-block: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+.progress-item
+ {
+    min-width: 1rem;
+    aspect-ratio: 1;
+    background-color: var(--clr-light-red);
+    border-radius: 1rem;
+}
+  
+.progress-item.active 
+{
+    background-color: var(--clr-accent-red);
+}
+@media screen and (max-width: 1470px) {
+  .programs
+  {
+    --items-per-row: 2;
+  }
+  .slider
+  {
+    --items-per-screen: 4;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .slider
+  {
+    --items-per-screen: 3;
+  }
+}
+@media screen and (max-width: 767px) {
+  .programs
+  {
+    --items-per-row: 1;
+  }
+  .slider
+  {
+    --items-per-screen: 2;
+  }
+}
+/*
 .mosaic
 {
     padding-block: 5%;
@@ -191,3 +383,4 @@ button
     background-image: url('../imgs/water.jpg');
 
 }
+*/
