@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../imgs/apog studio 1.jpg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../nav.css">
+    <link rel="stylesheet" href="calc.css">
+    <script src="../script.js" defer></script>
+    <script src="calc.js" defer></script>
+    <title> Calculator finante </title>
+</head>
+<body>
+    <header class="primary-header">
+        <div class="brand">
+            <div class="socials">
+                <a href=""><img src="../imgs/instagram.png" alt="instagram" class="socials-icon"></a>
+                <a href=""><img src="../imgs/facebook.png" alt="facebook" class="socials-icon"></a>
+                <a href=""><img src="../imgs/gmail.png" alt="gmail" class="socials-icon"></a>
+            </div>
+            <a href="#" id="brand-link"> HOME </a>
+        </div>
+
+        <button class="mobile-nav-toggle" aria-expanded="false">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+      </button>
+        <nav class="primary-nav" data-visible="false">
+            <ul>
+                <li><a href="../programe/programe.html"> PROGRAME </a></li>
+                <li><a href="../pagina-ghiduri/ghiduri.html"> GHIDURI </a></li>
+                <li><a href="#"> STUDIAZA </a></li>
+            </ul>
+            <div class = "results-div">
+                <div class="search-wrap" visible="false">
+                    <input type = "text" id="search" placeholder="Search.." onfocus="GetArticles()" onblur = "ClearResults()" visible="false">
+                    <button class="search-btn"></button>
+                </div> 
+                <div class = "results-display" visible = "false"></div>
+            </div>  
+        </nav>
+    </header>
+    <main>
+        <h1 class="main-title"> Calculator de finanțe</h1>
+        <div class="calc-container">
+            
+            <div class="country-list">
+                <h1> Alege destinația de studiu</h1>
+                <div class="europe" europe>
+                    <h2 class="continent"> Europa </h2>
+                    <div class="countries grid">
+                        <div class="country"><h3> Nume </h3></div>
+                        <div class="country"><h3> Nume </h3></div>
+                        <div class="country"><h3> Nume </h3></div>
+                        <div class="country"><h3> Nume </h3></div>
+                        <div class="country"><h3> Nume </h3></div>
+                        <div class="country"><h3> Nume </h3></div>
+                        <div class="country"><h3> Nume </h3></div>
+                        <div class="country"><h3> Nume </h3></div>
+                        <div class="country"><h3> Nume </h3></div>
+                        <div class="country"><h3> Nume </h3></div>
+                        <div class="country"><h3> Nume </h3></div>
+                        <div class="country"><h3> Nume </h3></div>
+                        <div class="country"><h3> Nume </h3></div>
+                        <div class="country"><h3> Nume </h3></div>
+                        <div class="country"><h3> Nume </h3></div>   
+                    </div>
+                </div>
+                <div class="america" america>
+                    <h2 class="continent"> America </h2>  
+                    <div class="countries grid">
+                        <div class="country"><h3> Nume </h3></div>
+                        <div class="country"><h3> Nume </h3></div>
+                    </div>
+                 </div>
+                <div class="asia" asia>
+                    <h2 class="continent"> Asia </h2>   
+                    <div class="countries grid">
+                        <div class="country"><h3> Nume </h3></div>
+                        <div class="country"><h3> Nume </h3></div>
+                    </div>
+                </div>
+                <div class="oceania" oceania>
+                    <h2 class="continent"> Oceania </h2>   
+                    <div class="countries grid">
+                        <div class="country"><h3> Nume </h3></div>
+                        <div class="country"><h3> Nume </h3></div>
+                    </div>
+                </div>
+            </div>
+            <div class="calculator-options">
+                 <div class="range">
+                    <label for="cost-range" class="range-label"> Costul Facultății </label>
+                        <input type="range"  min="1000" max="15000" value="" id="cost-range">
+                        <span class="range-value"> </span>
+                        <div class="currency-options"> 
+                            <select name="" id="">
+                                <option value="">EUR</option>
+                                <option value="">USD</option>
+                                <option value="">RON</option>
+                            </select>
+                        </div>
+                 </div>
+                 <div class="checkboxes">
+                    <input type="checkbox" id="checkbox">
+                    <label for="checkbox">Cămin</label>
+                 </div> 
+            </div>
+        </div>
+        <div class="tips-section">
+         <h2 class="tip"> " Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla hic ab incidunt quaerat voluptas neque suscipit nam dolore deleniti ratione. "</h2>
+        </div>
+    </main>
+</body>
+</html>

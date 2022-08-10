@@ -1,0 +1,281 @@
+:root
+{
+   --clr-primary-blue: hsl(224, 100%, 21%);
+   --clr-primary-red: hsl(0, 89%, 28%);
+   --clr-lightblue: hsl(221, 98%, 65%);
+   --clr-accent-red: hsl(2, 82%, 41%);
+   --clr-neutral-offwhite: hsl(0, 0%, 91%);
+   --clr-dark-gray: hsl(0, 0%, 25%);
+   --ff-heading: 'Be Vietnam Pro', sans-serif;
+   --ff-cursive: 'Caveat', cursive;
+   --ff-body: 'Source Sans Pro', sans-serif;
+
+   --fw-light: 300;
+   --fw-regular: 400;
+   --fw-semi-bold: 500;
+   --fw-bold-body: 600;
+   --fw-bold-heading: 700;
+   --fw-extra-bold: 900;
+
+   --fs-300: 1rem;
+   --fs-400: 1.125rem;
+   --fs-500: 1.25rem;
+   --fs-600: 1.5rem;
+   --fs-700: 2rem;
+   --fs-900: 2.5rem;
+}
+
+*, *::before, *::after 
+{
+  box-sizing: border-box;
+}
+  
+* 
+{
+  margin: 0;
+}
+
+html
+{
+ scroll-behavior: smooth;
+ scroll-padding-top: 10%;
+}
+html
+{
+  height: 100%;
+}
+ 
+body 
+{
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+}
+ 
+  img, picture, video, canvas, svg 
+{
+  display: block;
+  max-width: 100%;
+}
+ 
+input, button, textarea, select 
+{
+  font: inherit;
+  border: none;
+  outline: none;
+}
+ 
+p, h1, h2, h3, h4, h5, h6 
+{
+  overflow-wrap: break-word;
+}
+h1
+{
+    font-family: var(--ff-heading);
+}
+p
+{
+  font-family: var(--ff-body);
+}
+#root, #__next 
+{
+  isolation: isolate;
+}
+a
+{
+  text-decoration: none;
+  color: inherit;
+}
+button
+{
+  font-weight: var(--fw-bold-heading);
+  font-size: var(--fs-500);
+  font-family: var(--ff-body);
+  cursor: pointer;
+}
+ul[no-style]
+{
+  list-style: none;
+}
+.main-title
+{
+
+    font-size: var(--fs-900);
+    padding: .25em;
+    width: fit-content;
+    color: white;
+    text-align: right;
+    background-color: var(--clr-primary-blue);
+    border-bottom-right-radius: 2rem;
+}
+main
+{
+    padding: 1rem 3rem;
+    max-height: 100vh;
+}
+main > * + *
+{
+    margin-top: 1.5rem;
+}
+.calc-container
+{
+    padding-inline: 1rem;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding-block: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background-color: white;
+    
+}
+.calc-container::before
+{
+  content: '';
+  position: absolute;
+  inset: 45% 0 40% 0;
+  z-index: -3;
+  background-color: var(--clr-primary-blue);
+}
+.calc-container > *
+{
+    font-family: var(--ff-body);
+    flex-basis: 100%;
+}
+.grid
+{
+    display: grid;
+}
+.countries
+{
+    grid-template-columns: repeat(5, 1fr);
+    gap: .25rem;
+    margin-bottom: 1em;
+}
+.country-list h1
+{
+    text-align: center;
+    font-size: var(--fs-600);
+    margin-bottom: .75em;
+    width: 40%;
+    margin-inline: auto;
+}
+.country-list
+{
+    overflow: auto;
+    padding: 1.5em;
+    background-color: var(--clr-neutral-offwhite);
+    -webkit-box-shadow: 5px 5px 20px 2px rgba(0,0,0,0.5); 
+    box-shadow: 5px 5px 20px 2px rgba(0,0,0,0.5);
+    color: var(--clr-dark-gray);
+}
+.country-list h2
+{
+    font-family: var(--ff-heading);
+    font-size: var(--fs-400);
+    font-weight: var(--fw-bold-body);
+    margin-bottom: 1em;
+}
+.country h3
+{
+    font-family: var(--ff-body);
+    font-weight: var(--fw-regular);
+    font-size: var(--fs-400);
+    color: black;
+}
+.country
+{
+    padding: .25em 0;
+    text-align: center;
+    border: 1px solid gray;
+    border-radius: .125rem;
+}
+.country:hover, .country:focus
+{
+   border: 1px solid var(--clr-lightblue);
+}
+.country:hover.country > h3, .country:focus.country > h3
+{
+    font-weight: var(--fw-bold-body);
+    color: var(--clr-lightblue);
+}
+.calculator-options
+{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    -webkit-box-shadow: 5px 5px 20px 2px rgba(0,0,0,0.5); 
+    box-shadow: 5px 5px 20px 2px rgba(0,0,0,0.5);
+    padding: 10em 2em;
+}
+.range
+{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    max-width: 75%;
+}
+
+.range-label
+{
+    text-align: center;
+    font-size: var(--fs-500);
+}
+
+.range-value
+{
+     font-size: var(--fs-600);
+}
+#cost-range
+{
+    -webkit-appearance: none;
+
+    border: 1px solid lightgray;
+    border-radius: 2rem;
+    width: 25%;
+    height: .75rem;
+}
+.currency-options
+{
+    margin-left: 3rem;
+    
+}
+select
+{
+    border: 1px solid black;
+    font-size: var(--fs-300);
+    padding: .25em;
+}
+#cost-range::-webkit-slider-thumb
+{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1.25rem;
+    aspect-ratio: 1;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#cost-range::-moz-range-thumb
+{
+    appearance: none;
+    width: 1.25rem;
+    aspect-ratio: 1;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.tip
+{
+    font-size: var(--fs-400);
+    font-weight: var(--fw-light);
+    font-style: italic;
+    font-family: var(--ff-heading);
+    text-align: center;
+}

@@ -4,7 +4,7 @@ const searchButton = document.querySelector('.search-btn');
 const searchWrap = document.querySelector('.search-wrap');
 const searchDisplay = document.querySelector(".results-display");
 const search = document.getElementById('search');
-const closeButton = document.querySelector('.close');
+//const closeButton = document.querySelector('.close');
 const popupForm = document.querySelector('.popup');
 
 var articlesLoaded = false;
@@ -24,10 +24,10 @@ navToggle.addEventListener("click", () => {
   }
 });
 
-closeButton.addEventListener('click', () =>
+/*closeButton.addEventListener('click', () =>
 {
     popupForm.style.display = 'none';
-})
+})*/
 
 searchButton.addEventListener('click', () =>
 {
