@@ -9,6 +9,11 @@ const oceaniaGrid = document.querySelector('[oceania]');
 const RON_multiplier = 4.91;
 const USD_multiplier = 1.03;
 
+const dormsCheck = document.getElementById('dorms');
+const submit = document.querySelector('.submit');
+
+let dormsCost;
+costValue.textContent = range.value;
 range.oninput = function() 
 {
   costValue.textContent = this.value;
@@ -16,7 +21,7 @@ range.oninput = function()
 range.addEventListener('mousemove',  () =>
 {
     let percent = range.value;
-    let clr = `linear-gradient(to right, lightgray ${percent / 150}%, white ${percent / 150}%)`;
+    let clr = `linear-gradient(to right, lightgray ${percent / 300}%, white ${percent / 300}%)`;
     range.style.background = clr;
 })
 
@@ -142,6 +147,7 @@ async function addCountries()
     
         country.addEventListener('click', ()=>
         {
+            dormsCheck.checked = false;
             document.querySelectorAll('.country').forEach((countryItem) =>
             {
                 countryItem.classList.remove('active')
@@ -152,24 +158,29 @@ async function addCountries()
 }
 window.onload = addCountries;
 
-function checkCostRange()
+function verifyData()
 {
-    let countryGroup = document.querySelectorAll('.country');
-    for (let i = 0; i < countries.length; i++)
+    for (let i = 0; i <= countries.length; i++)
     {
-        countryGroup.forEach((country) =>
+        document.querySelectorAll('.country').forEach((country) =>
         {
             if (!(country.classList.contains('active')))
-                return;
+                 return;
+            if ((country.textContent != countries[i].name))
+                 return;
             
-            if (country.textContent === countries[i].name)
-            {
-                range.min = countries[i].costs.min;
-                range.max = countries[i].costs.max;
-            }
+            submit.href = `./countries/${countries[i].name.toLowerCase()}.html`
+            localStorage.setItem('cost', range.value);
+            localStorage.setItem('min', countries[i].costs.min);
+            localStorage.setItem('max', countries[i].costs.max);
+            console.log(localStorage.getItem('cost'));
+            if (dormsCheck.checked)
+               dormsCost = countries[i].dorms;
+               localStorage.setItem('dorms', dormsCost);
+        
         })
     }
-    costValue.textContent = range.value;
 }
-document.querySelectorAll('.country').forEach(addEventListener('click', checkCostRange));
+
+submit.addEventListener('click', verifyData);
 
