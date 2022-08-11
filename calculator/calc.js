@@ -170,13 +170,16 @@ function verifyData()
                  return;
             
             submit.href = `./countries/${countries[i].name.toLowerCase()}.html`
+            dormsCost = countries[i].dorms;
             localStorage.setItem('cost', range.value);
             localStorage.setItem('min', countries[i].costs.min);
             localStorage.setItem('max', countries[i].costs.max);
             console.log(localStorage.getItem('cost'));
-            if (dormsCheck.checked)
-               dormsCost = countries[i].dorms;
-               localStorage.setItem('dorms', dormsCost);
+
+            if(dormsCheck.checked)
+                localStorage.setItem('dorms', dormsCost);
+            else
+                localStorage.setItem('dorms', 0);     
         
         })
     }
