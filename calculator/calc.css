@@ -150,8 +150,9 @@ main > * + *
 }
 .countries
 {
-    grid-template-columns: repeat(5, 1fr);
-    gap: .25rem;
+    --grid-repeat: 5;
+    grid-template-columns: repeat(var(--grid-repeat), 1fr);
+    gap: .5rem;
     margin-bottom: 1em;
 }
 .country-list h1
@@ -228,7 +229,10 @@ main > * + *
     display: flex;
     align-items: center;
     gap: 1em;
-    max-width: 75%;
+    width: 100%;
+    padding: 2.5em;
+    max-width: 750px;
+    border: 2px solid red;
 }
 
 .range-label
@@ -240,20 +244,20 @@ main > * + *
 .range-value
 {
      font-size: var(--fs-600);
+     margin-right: 2rem;
 }
 #cost-range
 {
     -webkit-appearance: none;
-
     border: 1px solid lightgray;
     border-radius: 2rem;
-    width: 25%;
+    width: 100%;
+    max-width: 150px;
     height: .75rem;
 }
-.currency-options
+.currency
 {
-    margin-left: 2rem;
-    
+  display: flex;
 }
 select
 {
@@ -307,4 +311,45 @@ select
     font-style: italic;
     font-family: var(--ff-heading);
     text-align: center;
+}
+
+@media  (max-width: 1200px) 
+{
+  .calc-container
+  {
+    flex-direction: column;
+  }
+  
+  .calculator-options
+  {
+    padding-inline: 5em;
+  }
+}
+@media  (max-width: 767px) 
+{
+  .range
+  {
+    flex-direction: column;
+  }
+}
+@media (orientation: portrait)
+{
+   :root
+   {
+    --fs-300: .75rem;
+   --fs-400: 1rem;
+   --fs-500: 1.125rem;
+   --fs-600: 1.25rem;
+   --fs-700: 1.75rem;
+   --fs-900: 2rem;
+   }
+  
+   .countries
+   {
+     --grid-repeat: 4;
+   }
+   .country
+   {
+     padding-inline: .5em;
+   }
 }

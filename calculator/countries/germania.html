@@ -4,13 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tari.css">
     <title> Germania </title>
 </head>
 <body>
-     <h1> Costuri Germania </h1>
-     <p class="cost"> Cost facultate: </p>
-     <p class="cost-range"> Costuri: </p>
-     <p></p>
+    <div class="main-heading">
+        <h1> Costuri Germania </h1>
+        <div class="flag"> STEAG AICI </div>
+    </div>
+    <div class="cost-content">
+        <p class="cost"> Cost facultate: </p>
+        <p class="cost-range"> Costuri: </p>
+    </div>
 
      <script>
         document.querySelector('.cost').textContent += Math.ceil(parseInt(localStorage.getItem('cost'))+ parseInt(localStorage.getItem('dorms')));
