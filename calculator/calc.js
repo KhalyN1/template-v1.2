@@ -20,12 +20,13 @@ range.oninput = function()
 }
 range.addEventListener('mousemove',  () =>
 {
+
     let percent = range.value;
     let clr = `linear-gradient(to right, lightgray ${percent / 300}%, white ${percent / 300}%)`;
     range.style.background = clr;
 })
 
-let countries =
+var countries =
 [
     {
         "name": "Olanda",
@@ -33,7 +34,7 @@ let countries =
         "costs":
         {
            "min": 2500,
-           "max": 15000
+           "max": 1500
         },
         "dorms": 1500
     },
@@ -131,7 +132,7 @@ let countries =
 ] 
 async function addCountries()
 {
-    for (let i = 0; i <= countries.length; i++)
+    for (let i = 0; i < countries.length; i++)
     {
         let country = document.createElement('div');
         country.classList.add('country');
@@ -160,7 +161,7 @@ window.onload = addCountries;
 
 function verifyData()
 {
-    for (let i = 0; i <= countries.length; i++)
+    for (let i = 0; i < countries.length; i++)
     {
         document.querySelectorAll('.country').forEach((country) =>
         {
