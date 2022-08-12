@@ -17,6 +17,7 @@
    --fw-bold-heading: 700;
    --fw-extra-bold: 900;
 
+   --fs-300: 1rem;
    --fs-400: 1.125rem;
    --fs-500: 1.25rem;
    --fs-600: 1.5rem;
@@ -82,18 +83,83 @@ button
   font-family: var(--ff-body);
   cursor: pointer;
 }
-
 main
 {
-  margin-top: 10%;
+  margin-top: 70px;
 }
 main > * + *
 {
   margin-top: 10rem;
 }
-.container
+.hero 
+{
+  background-color: var(--clr-primary-blue);
+  color: white;
+  padding: 2em 1em;
+  gap: 2em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hero > h1
+{
+  font-size: var(--fs-700);
+  font-weight: var(--fw-bold-heading);
+  text-transform: uppercase;
+}
+.hero-search-wrap
+{
+  width: 80%;
+  max-width: 600px;
+}
+.hero-search
 {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .25rem;
+  border-radius: 25px;
+  padding: 1.125em .75em;
+  padding-right: .25em;
+  background: white;
+  height: 30px;
+  font-family: var(--ff-body);
+  font-size: var(--fs-400);
+}
+
+.hero-tabs
+{
+  font-family: var(--ff-body);
+  text-align: center;
+  display: flex;
+  gap: 1em;
+}
+
+.hero-tab
+{
+  width: fit-content;
+  max-width: 11rem;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tab-img
+{
+  width: 3rem;
+  aspect-ratio: 1;
+  background-color: white;
+  border-radius: 50%;
+}
+.hero-tab p
+{
+  font-size: var(--fs-300);
+  font-weight: var(--fw-light);
+}
+.container
+{
+  display: none;
   position: relative;
   align-items: center;
   padding: 2rem;
@@ -416,11 +482,13 @@ main > * + *
 
 @media screen and (max-width: 1600px)
 {
-  .container
-  {
+
+.container
+{
     flex-direction: column;
-  }
-  .tab:first-child
+}
+
+.tab:first-child
 {
   margin-top: 2rem;
 }
