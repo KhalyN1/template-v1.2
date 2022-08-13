@@ -98,6 +98,33 @@ ul[no-style]
 {
   list-style: none;
 }
+.grid
+{
+    display: grid;
+}
+.grid-col-2
+{
+  grid-column: span 2;
+  
+}
+.grid-row-2
+{
+  grid-row: span 2;
+  
+}
+.grid-col-3
+{
+  grid-column: span 3;
+  aspect-ratio: 2;
+}
+.grid-row-3
+{
+  grid-row: span 3;
+}
+.grid-col-4
+{
+  grid-column: span 4;
+}
 .flex-row
 {
   display: flex;
@@ -177,11 +204,11 @@ nav li
 
 nav li::before
 {
-  content: '';
+    content: '';
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: -1px;
     height: 3px;
     width: 100%;
     background-color: var(--clr-primary-red);
@@ -189,7 +216,8 @@ nav li::before
     transition: transform 0.1s ease-in-out;
 }
 nav li:hover::before,
-nav li:focus::before
+nav li:focus::before,
+nav li.active::before
 {
    transform: scaleX(1);
 }
@@ -201,7 +229,8 @@ nav li:focus::before
   font-family: var(--ff-heading);
   transition: color 0.15s ease-in-out;
 }
-nav li:hover a
+nav li:hover a,
+nav li.active a
 {
   color: var(--clr-accent-red);
 }
@@ -210,6 +239,7 @@ nav li:hover a
     
     align-items: center;
     display: flex;
+    justify-content: space-between;
     gap: .25rem;
     border-radius: 25px;
     padding: 1.125rem .75rem;
@@ -270,14 +300,6 @@ nav li:hover a
     display: flex;
     flex-direction: column;
 }
-.nav-btn
-{
-  background: linear-gradient(to right, var(--clr-primary-blue), var(--clr-accent-red));
-  width: fit-content;
-  color: white;
-  border-radius: .875rem;
-  padding: .25rem .5rem;
-}
 
 .popup
 {
@@ -335,6 +357,15 @@ nav li:hover a
     border-radius: 1.5rem;
 }
 
+main
+{
+  margin-top: 72px;
+}
+
+input[type="text"]
+{
+  font-family: var(--ff-body);
+}
 footer
 {
 

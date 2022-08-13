@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../imgs/apog studio 1.jpg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="ghid-elev.css">
+    <link rel="stylesheet" href="../nav.css">
+    <script src="../script.js" defer></script>
+    <!----><script src="ghid-elev.js" defer></script>
+    
+    <title> Ghid Elev (?) </title>
+</head>
+<body>
+    <header class="primary-header">
+        <div class="brand">
+            <div class="socials">
+                <a href=""><img src="../imgs/instagram.png" alt="instagram" class="socials-icon"></a>
+                <a href=""><img src="../imgs/facebook.png" alt="facebook" class="socials-icon"></a>
+                <a href=""><img src="../imgs/gmail.png" alt="gmail" class="socials-icon"></a>
+            </div>
+            <a href="../main-page/index.html" id="brand-link"> HOME </a>
+        </div>
+
+        <button class="mobile-nav-toggle" aria-expanded="false">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+      </button>
+        <nav class="primary-nav" data-visible="false">
+            <ul>
+                <li><a href="../programe/programe.html"> PROGRAME </a></li>
+                <li><a href="../ghid-parinte/ghid-parinte.html"> GHIDUL PARINTELUI </a></li>
+                <li class="active"><a href="#"> GHIDUL ELEVULUI  </a></li>
+            </ul>
+            <div class = "search-container">
+                <div class="search-wrap" visible="false">
+                    <input type = "text" id="search" placeholder="Search.." onfocus="GetArticles()" onblur = "ClearResults()" visible="false">
+                    <button class="search-btn"></button>
+                </div> 
+                <div class = "results-display" visible = "false"></div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="hero">
+            <div class="hero-left">
+                <h2> Descoperă facultatea potrivită </h2>
+                <div class="search-wrap">
+                    <input type="text" class="hero-search" placeholder="Search..">
+                    <button class="search-btn"></button>
+                </div>
+                
+            </div>
+            <button class="ask-btn">
+                SOLICITĂ
+            </button> 
+        </div>
+        <div class="map">
+            <h1> Destinații de studiu </h1>
+            <img src="world-map.svg" alt="map">
+        </div>
+        <div class="info">
+            <a href="" class="info-link">
+                <img src="../imgs/hat.png" alt="hat">
+                <div class="info-text">
+                    <h2>11.000 de studenți</h2>
+                    <p> Pleacă anual din România pentru a se bucura de <span> beneficiile studiului în străinătate</span>  </p>
+                </div>
+                
+            </a>
+            <a href="" class="info-link">
+                <img src="../imgs/globe.png" alt="globe">
+                <div class="info-text">
+                    <h2> 3 Continente </h2>
+                    <p> 12 țări preferate de studenți <span>care te așteaptă</span></p>
+                </div>
+                
+            </a>
+            <a href="" class="info-link">
+                <img src="../imgs//diploma.png" alt="diploma">
+                <div class="info-text">
+                    <h2> Certificări</h2>
+                    <p>CAE, LEITS, TOEFL, unde trebuie și <span>punctajele necesare</span></p>
+                </div>
+            </a>
+            
+            <a href="" class="info-link">
+                <img src="../imgs/checkmark.png" alt="checkmark">
+                <div class="info-text">
+                    <h2>26 de programe</h2>
+                    <p> de studiu practice si inovative cu <span>informații disponibile</span></p>
+                </div>
+            </a>
+        </div>       
+        <div class="education">
+            <h1> #EDUCAȚIE FĂRĂ <span> FRONTIERE </span> </h1>
+
+            <div class="education-content">
+                <img src="../imgs/edu-img.png" alt="">
+            <div class="education-text">
+                <p class="newsletter-preview">
+                    Abonează-te la newsletter-ul nostru "Educație fără frontiere" pentru cele mai noi și calitative informații 
+                    despre admiterea în străinătate, universități, articole și update-uri săptămânale menite să înlăture orice 
+                    obstacol dintre tine și studiul în străinătate. Abonează-te acum și vei primi întâietate la solicitările 
+                    trimise. Cu drag, echipa Calin & Co.
+                </p>
+                <div class="newsletter">
+                    <input type="text"  placeholder="E-mail" class="email-input">
+                    <button class="submit"> Abonează-te </button>
+                </div>
+                <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea fugiat sed ipsum soluta! Iste natus et blanditiis ut inventore harum, nisi ullam a ex, 
+                    voluptas odio laborum beatae quos corporis sint possimus consequatur, nobis tempora. Incidunt repellat temporibus tenetur beatae neque ea hic architecto, 
+                    excepturi vero! Tempore ex voluptatem sapiente distinctio hic cumque dignissimos, quam, nam obcaecati nisi architecto dolores minus enim excepturi culpa 
+                    nostrum minima officia non, dolorem ea ut veritatis. Atque, officia neque perspiciatis dolorum necessitatibus nam assumenda animi esse suscipit debitis perferendis optio ipsa 
+                    unde consectetur laborum aspernatur ad dicta eveniet incidunt temporibus! Neque nostrum at repellendus.
+                </p>
+            </div>
+            </div>
+        </div>
+        <div class="articles-section">
+            <div class="prev-text">
+                <h1> ARTICOLELE NOASTRE </h1>
+                <p>Informează-te despre viitorul tău prin <span>articolele noastre</span></p>
+            </div>
+                
+            <div class="articles">
+            </div>
+        </div>
+    </main>
+</body>
+</html>
