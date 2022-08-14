@@ -135,6 +135,10 @@ ul[no-style]
   display: flex;
   flex-direction: column;
 }
+main
+{
+  margin-top: 80px;
+}
 .primary-header
 {
     position: fixed;
@@ -470,7 +474,7 @@ footer .socials
     {
       gap: 2rem;
     }
-   .search-wrap
+   nav .search-wrap
    {
      display: none;
    }

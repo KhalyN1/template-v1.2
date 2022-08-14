@@ -1,0 +1,397 @@
+:root
+{
+   --clr-primary-blue: hsl(224, 100%, 21%);
+   --clr-secondary-blue: hsl(232, 43%, 52%);
+   --clr-primary-red: hsl(0, 89%, 28%);
+   --clr-accent-red: hsl(2, 82%, 41%);
+   --clr-light-red: hsl(2, 32%, 84%);
+   --clr-yellow: hsl(32, 83%, 50%);
+   --clr-accent-green: hsl(127, 41%, 42%);
+   --clr-neutral-offwhite: hsl(0, 0%, 91%);
+
+   --ff-heading: 'Be Vietnam Pro', sans-serif;
+   --ff-cursive: 'Caveat', cursive;
+   --ff-body: 'Source Sans Pro', sans-serif;
+
+   --fw-light: 300;
+   --fw-regular: 400;
+   --fw-semi-bold: 500;
+   --fw-bold-body: 600;
+   --fw-bold-heading: 700;
+   --fw-extra-bold: 900;
+
+   --fs-300: 1rem;
+   --fs-400: 1.125rem;
+   --fs-500: 1.25rem;
+   --fs-600: 1.5rem;
+   --fs-700: 2rem;
+   --fs-900: 2.5rem;
+}
+
+*, *::before, *::after 
+{
+  box-sizing: border-box;
+}
+  
+* 
+{
+  margin: 0;
+}
+
+html
+{
+  height: 100%;
+  overflow-x: hidden;
+}
+ 
+body 
+{
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+ 
+  img, picture, video, canvas, svg 
+{
+  display: block;
+  max-width: 100%;
+}
+ 
+input, button, textarea, select 
+{
+  font: inherit;
+  border: none;
+  outline: none;
+}
+ 
+p, h1, h2, h3, h4, h5, h6 
+{
+  overflow-wrap: break-word;
+}
+h1
+{
+    font-family: var(--ff-heading);
+}
+#root, #__next 
+{
+  isolation: isolate;
+}
+a
+{
+  text-decoration: none;
+}
+button
+{
+  font-weight: var(--fw-bold-body);
+  font-size: var(--fs-500);
+  font-family: var(--ff-body);
+  cursor: pointer;
+}
+
+span
+{
+    color: var(--clr-accent-red);
+}
+.hero
+{
+    margin-top: 2px;
+    padding-block: 3rem;
+    border-top: 15px solid var(--clr-primary-blue);
+    display: flex;
+    flex-direction: column;
+    gap: 4em;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.hero h1
+{
+    text-align: center;
+}
+.hero .search-wrap
+{
+    width: 80%;
+    max-width: 700px;
+    border: 2px solid var(--clr-neutral-offwhite);
+    background-color: transparent;
+    justify-content: space-between;
+    border-radius: 5px;
+    padding: 1.5em 0;
+}
+.hero .search-btn-hero
+{
+    background-color: var(--clr-primary-blue);
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border: none;
+    z-index: 1;
+    padding-block: 1.25em; 
+    padding-inline: 1.5em 2em;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.search-btn-hero > img
+{
+    z-index: 10;
+    width: 45%;
+    margin-right: auto;
+    opacity: 1;
+}
+.hero img
+{
+
+    aspect-ratio: inherit;
+    object-fit: cover;
+    z-index: -2;
+    opacity: 1;
+    position: absolute;
+    inset: 20% 0 0 42%;
+}
+.hero-search
+{
+    background-color: transparent;
+    width: 100%;
+    padding-inline-start: 1em;
+}
+.finance-tabs
+{
+    margin-top: 5rem;
+    display: flex;
+    background-color: var(--clr-neutral-offwhite);
+    gap: 5em;
+    padding: 1em 5em;
+}
+.tab
+{
+    padding: 2em;
+    gap: 1.65em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.tab h2
+{
+    font-family: var(--ff-heading);
+}
+.tab .paragraphs
+{
+    line-height: 2;
+    font-size: var(--fs-300);
+    width: 90%;
+    margin-inline: auto;
+}
+
+button.continue
+{
+    color: white;
+    background-color: var(--clr-yellow);
+    padding: .25em .5em;
+    border-radius: .75rem;
+}
+.newsletter-section
+{
+    background-color: var(--clr-primary-blue);
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    gap: 1em;
+    align-items: center;
+    color: white;
+}
+.newsletter-preview
+{
+    width: 30%;
+}
+.newsletter
+{
+    display: flex;
+    background-color: white;
+    border: none;
+    font-size: var(--fs-300);
+    width: fit-content;
+}
+.email-input, .submit
+{
+    padding: .125em;
+}
+.submit
+{
+    color: white;
+    padding-inline: .5em;
+    font-size: var(--fs-300);
+    background-color: var(--clr-accent-green);
+}
+
+.articles-section
+{
+    background-color: var(--clr-neutral-offwhite);
+    display: flex;
+    justify-content: space-between;
+    padding: 4em;
+    position: relative;
+    z-index: -2;
+}
+.articles-section::before, .articles-section::after
+{
+    position: absolute;
+    content: '';
+}
+.articles-section::before
+{
+    
+    top: 2em;
+    left: 2em;
+    background-color: var(--clr-accent-red);
+    width: 5.5rem;
+    aspect-ratio: 1;
+}
+.articles-section::after
+{
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 30%;
+    height: 40%;
+    border-top: 5px solid gray;
+    border-right: 5px solid gray;
+}
+.prev-text
+{
+    padding: 1em;
+    z-index: 1;
+}
+.articles-section h1
+{
+   
+    font-size: var(--fs-700);
+    width: min-content;
+    margin-bottom: 5rem;
+}
+
+.prev-text p
+{
+    width: 250px;
+    line-height: 2;
+    font-size: var(--fs-600);
+}
+.articles
+{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 75%;
+    gap: .25rem;
+}
+.article
+{
+    width: 100%;
+    aspect-ratio: 1.5;
+    font-size: var(--fs-300);
+    font-weight: var(--fw-bold-body);
+    font-family: var(--ff-body);
+}
+
+.article-card
+{
+    width: 100%;
+    height: 100%;
+    padding: .25em;
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    flex-direction: column;
+    aspect-ratio: inherit;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+.article-card p
+{
+    z-index: 1;
+}
+.article-card::before
+{
+    content: ' ';
+    inset: 0;
+    background: linear-gradient(to bottom, transparent, black);
+    opacity: 0.6;
+    position: absolute;
+}
+.article.grid-col-2
+{
+    aspect-ratio: 3;
+    font-size: var(--fs-400);
+}
+
+.article.grid-col-2.grid-row-2
+{
+    aspect-ratio: 1.49;
+    
+}
+
+.article-card > img
+{
+  width: 100%;
+  aspect-ratio: inherit;
+  object-fit: cover;
+  transform: scale(1.01);
+  z-index: -2;
+  position: absolute;
+  inset: 0;
+}
+@media (max-width: 1024px) {
+    .finance-tabs
+    {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .tab .paragraphs
+    {
+        width: 50%;
+    }
+}
+
+@media (max-width: 767px)
+{
+  .finance-tabs
+  {
+    padding-inline: 0;
+  }
+  .tab
+  {
+    padding-inline: 0;
+    width: 100%;
+  }
+  .tab p
+  {
+    width: 100%;
+  }
+}
+@media (max-width: 1260px)
+{
+  :root
+   {
+    --fs-300: .75rem;
+   --fs-400: 1rem;
+   --fs-500: 1.125rem;
+   --fs-600: 1.25rem;
+   --fs-700: 1.75rem;
+   --fs-900: 2rem;
+   }
+  .articles-section
+    {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .articles
+    {
+        display: flex;
+        flex-direction: column;
+    }
+    .article, .article.grid-col-2
+    {
+        aspect-ratio: 2;
+    }
+}
