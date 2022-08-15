@@ -94,6 +94,11 @@ button
   font-family: var(--ff-body);
   cursor: pointer;
 }
+.btn-primary
+{
+  background-color: var(--clr-primary-blue);
+  color: white;
+}
 ul[no-style]
 {
   list-style: none;
@@ -359,11 +364,6 @@ nav li.active a
     width: 30px;
     aspect-ratio: 1;
     border-radius: 1.5rem;
-}
-
-main
-{
-  margin-top: 72px;
 }
 
 input[type="text"]

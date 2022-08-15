@@ -1,3 +1,88 @@
+const options = document.querySelector('.degree-options');
+const subjectOptions = options.querySelectorAll('.subject-card')
+const subjectContainer = document.querySelector('.degree-results');
+const subjectResults = subjectContainer.querySelectorAll('.subject-card');
+
+const filterBtn = document.querySelector('.filter-btn');
+
+subjectOptions.forEach((subject) =>
+{
+  subject.addEventListener('click', () =>
+  {
+    let card = document.createElement('div');
+    let p = document.createElement ('p');
+    card.classList.add('subject-card');
+    p.textContent = subject.textContent;
+    let btn = document.createElement('button');
+    btn.classList.add('x-button');
+    for (let i = 0; i < 2; i++)
+    {
+        let line = document.createElement('span');
+        line.classList.add('x-line');
+        btn.appendChild(line);
+    }
+  
+    subjectContainer.appendChild(card);
+    card.appendChild(p);
+    card.appendChild(btn);
+    
+    subject.setAttribute('selected', 'true'); 
+
+    checkOptionNumber();
+
+     document.querySelectorAll('.x-button').forEach((xBtn) =>
+      {
+         xBtn.addEventListener('click', () =>
+        {
+            let result = xBtn.parentElement
+            result.parentElement.removeChild(result);
+            checkOptionNumber();
+            subject.setAttribute('selected', 'false');
+        })
+})
+  })
+})
+
+function checkOptionNumber()
+{
+  let optionCount = subjectContainer.children.length;
+    if (optionCount > 0)
+     {
+      document.querySelector('.aid-text').setAttribute('style', 'display: none');
+      
+      console.log(optionCount);
+     }
+     else document.querySelector('.aid-text').setAttribute('style', 'display: block');
+
+     if (optionCount === 3)
+     {
+       document.querySelectorAll('[selected="false"]').forEach((unclicked) => unclicked.classList.add('inactive'));
+     }
+     else
+     {
+      document.querySelectorAll('[selected="false"]').forEach((unclicked) => unclicked.classList.remove('inactive'));
+     }
+}
+
+filterBtn.addEventListener('click', () =>
+{
+  let optionCount = subjectContainer.children.length;
+  if (optionCount === 0) 
+  {
+    document.querySelector('.error-text').setAttribute('style', 'display: block');
+    document.querySelector('.succes-text').setAttribute('style', 'display: none');
+    return;
+  }
+
+  document.querySelector('.error-text').setAttribute('style', 'display: none');
+  document.querySelector('.succes-text').setAttribute('style', 'display: block');
+        
+})
+
+
+
+//progress bar + slider, in versiunea actuala nu exista
+/*
 document.querySelectorAll('.progress-bar').forEach(calculateProgress);
 const checkProgress = () => 
 {
@@ -87,3 +172,4 @@ function handleClick(handle)
               
         }
 }
+*/

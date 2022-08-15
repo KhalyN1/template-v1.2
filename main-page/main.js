@@ -53,8 +53,7 @@ function fetchAPI()
 
 async function calculateProgress(progressBar)
 {
-     
-      
+  
        progressBar.innerHTML = '';
        const slider = document.querySelector('.slider');
        const itemCount = slider.children.length;
