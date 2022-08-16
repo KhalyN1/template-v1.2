@@ -140,10 +140,7 @@ ul[no-style]
   display: flex;
   flex-direction: column;
 }
-main
-{
-  margin-top: 80px;
-}
+
 .primary-header
 {
     position: fixed;
@@ -340,19 +337,30 @@ nav li.active a
    border: 1px solid lightgray;
    outline: none;
    border-radius: 5px;
-   font-size: 1.5rem;
+   padding: .25em .5em;
+   font-size: var(--fs-500);
+}
+.popup-form > textarea
+{
+  border: 1px solid lightgray;
+  outline: none;
+  border-radius: 5px;
+  padding: .25em .5em;
+  padding-bottom: 2em;
+  font-size: var(--fs-500);
+  font-family: var(--ff-body);
 }
 
-.popup-form > .submit
+.popup-form > .submit-form
 {
     margin-top: 10px;
-    font-size: 1.5rem;
+    font-size: var(--fs-500);
     width: fit-content;
     background-color: var(--clr-primary-blue);
-    padding: 5px 10px;
+    padding: .25em 1em;
     color: white;
     border: none;
-    border-radius: 25px;
+    border-radius: .75em;
     cursor: pointer;
 }
 .close

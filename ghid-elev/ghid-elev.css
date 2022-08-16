@@ -85,7 +85,10 @@ button
   font-family: var(--ff-body);
   cursor: pointer;
 }
-
+main
+{
+    margin-top: 72px;
+}
 main > * + *
 {
     margin-top: 10rem;

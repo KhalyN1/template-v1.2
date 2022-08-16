@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="ghid-elev.css">
     <link rel="stylesheet" href="../nav.css">
-    <script src="../script.js" defer></script>
+    <script src="../script.js"  defer></script>
     <!----><script src="ghid-elev.js" defer></script>
     
     <title> Ghid Elev (?) </title>
@@ -48,6 +48,18 @@
             </div>
         </nav>
     </header>
+    <div class="popup">
+        <form class="popup-form">
+            <input type="text" class="username" placeholder="Username" 
+             onfocus = "this.placeholder = ''" onblur = "this.placeholder = 'Username'" >
+            <input type="text" class="email" placeholder="Email"
+            onfocus = "this.placeholder = ''" onblur = "this.placeholder = 'Email'">
+            <textarea type="text" class="details" placeholder="Detalii"
+            onfocus = "this.placeholder = ''" onblur = "this.placeholder = 'Detalii'"></textarea>
+            <button type = "submit" class="submit-form btn-primary"> Submit </button>
+            <button class="close"> </button>
+        </form>
+    </div>
     <main>
         <div class="hero">
             <div class="hero-left">

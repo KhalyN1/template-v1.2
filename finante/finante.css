@@ -94,7 +94,7 @@ span
 .hero
 {
     margin-top: 2px;
-    padding-block: 3rem;
+    padding-block: 6rem;
     border-top: 15px solid var(--clr-primary-blue);
     display: flex;
     flex-direction: column;
@@ -164,7 +164,7 @@ span
 }
 .tab
 {
-    padding: 2em;
+    padding: 3em;
     gap: 1.65em;
     display: flex;
     flex-direction: column;
