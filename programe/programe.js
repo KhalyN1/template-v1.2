@@ -31,7 +31,7 @@ subjectOptions.forEach((subject) =>
     card.appendChild(btn);
     
     subject.setAttribute('selected', 'true');   
-    selectedSubjects.push(subject.querySelector('.subject-card p').textContent.replace('â', 'a').replace('ă', 'a')); // uite ce ma pui sa fac caline
+    selectedSubjects.push(subject.querySelector('.subject-card p').textContent); // uite ce ma pui sa fac caline
     console.log(selectedSubjects);
     checkOptionNumber();
 
@@ -84,7 +84,19 @@ filterBtn.addEventListener('click', () =>
 function showPrograms(filteredDegrees)
 {
     filteredDegrees.sort((a, b) => a.score > b.score ? -1 : 1); // sort dupa "score";
-    filteredDegrees.forEach(degree => console.log(degree));
+    filteredDegrees.forEach(degree => 
+    {
+        console.log(degree);
+        document.querySelectorAll('.program').forEach((program) => 
+        {
+         
+            if (program.querySelector('h2').textContent === degree.name)
+            {
+                program.setAttribute('data-visible', true);
+            }    
+        })
+    });
+    
 }
 
 /** "When I wrote this code, only God and I knew how it worked. Now only God knows."/s */
@@ -118,45 +130,46 @@ function filterPrograms()
             }
         })
     })
+    document.querySelectorAll('.program').forEach(program => program.setAttribute('data-visible', false));
     showPrograms(filteredDegrees);
-    filteredDegrees.length = 0; // filteredDegrees.clear() - pentru ca avem functie .includes dar nu avem .clear; ms js
+     // filteredDegrees.clear() - pentru ca avem functie .includes dar nu avem .clear; ms js
 }
 
 degrees = [
     {
         "name": "Computer Science",
-        "subjects": ["Matematica", "Informatica"]
+        "subjects": ["Matematică]", "Informatică"]
     },
     {
-        "name": "Software and Engineer",
-        "subjects": ["Matematica", "Informatica"]
+        "name": "Software Engineer",
+        "subjects": ["Matematică", "Informatică"]
     },
     {
         "name": "Game Dev",
-        "subjects": ["Informatica", "Fizica"]
+        "subjects": ["Informatică", "Fizică"]
     },
     {
         "name": "Contabilitate",
-        "subjects": ["Matematica", "Economie"]
+        "subjects": ["Matematică", "Economie"]
     },
     {
-        "name": "Arhitectura si Constructii",
-        "subjects": ["Matematica", "Fizica,", "Desen"]
+        "name": "Arhitectură si Construcții",
+        "subjects": ["Matematică", "Fizică,", "Desen"]
     },
     {
-        "name": "Inginerie Aerospatiala",
-        "subjects": ["Matematica", "Fizica"]
+        "name": "Inginerie Aerospațială",
+        "subjects": ["Matematică", "Fizică"]
     },
     {
-        "name": "Arta si Design",
+        "name": "Artă și Design",
         "subjects": ["Desen", "Istorie"]
     },
     {
-        "name": "Business si Managemenet",
+        "name": "Business si Management",
         "subjects": ["Psihologie, Economie"]
     },    
     {
-        "name": "Inginerie Chimica",
+        "name": "Inginerie Chimică",
         "subjects": ["Chimie"]
     },
     {
@@ -164,20 +177,20 @@ degrees = [
         "subjects": ["Chimie", "Biologie"]
     },
     {
-        "name": "Inginerie Electrica",
-        "subjects": ["Fizica"]
+        "name": "Inginerie Electrică",
+        "subjects": ["Fizică"]
     },
     {
-        "name": "Finante",
-        "subjects": ["Economie", "Matematica"]
+        "name": "Finanțe",
+        "subjects": ["Economie", "Matematică"]
     },
     {
         "name": "Cinematografie",
-        "subjects": ["Istorie", "Desen", "Engleza"]
+        "subjects": ["Istorie", "Desen", "Engleză"]
     },
     {
         "name": "Jurnalism",
-        "subjects": ["Engleza", "Istorie", "Psihologie"]
+        "subjects": ["Engleză", "Istorie", "Psihologie"]
     },
     {
         "name": "Drept",
@@ -188,27 +201,27 @@ degrees = [
         "subjects": ["Desen", "Economie", "Psihologie"]
     },
     {
-        "name": "Inginerie Mecanica",
-        "subjects": ["Matematica", "Fizica"]
+        "name": "Inginerie Mecanică",
+        "subjects": ["Matematică", "Fizică"]
     },
     {
-        "name": "Medicina",
+        "name": "Medicină",
         "subjects": ["Biologie", "Chimie"]
     },
     {
-        "name": "Biofizica",
-        "subjects": ["Biologie", "Fizica"] // btw nu cred ca asta-i biofizica chief 
+        "name": "Biofizică",
+        "subjects": ["Biologie", "Fizică"] // btw nu cred ca asta-i biofizica chief 
     },
     {
         "name": "Biochimie",
         "subjects": ["Biologie", "Chimie"]
     },
     {
-        "name": "Biologie Moleculara",
+        "name": "Biologie Moleculară",
         "subjects": ["Biologie"]
     },
     {
-        "name": "Medicina Veterinara",
+        "name": "Medicină Veterinară",
         "subjects": ["Biologie", "Chimie"]
     },
     {
@@ -216,7 +229,7 @@ degrees = [
         "subjects": ["Psihologie"]
     },
     {
-        "name": "Politica",
+        "name": "Politică",
         "subjects": ["Istorie", "Psihologie"]
     },
     {

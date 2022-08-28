@@ -2,10 +2,14 @@
 {
    --clr-primary-blue: hsl(224, 100%, 21%);
    --clr-primary-red: hsl(0, 89%, 28%);
+   --clr-secondary-blue: hsl(224, 59%, 41%);
    --clr-lightblue: hsl(221, 98%, 65%);
    --clr-accent-red: hsl(2, 82%, 41%);
+   --clr-accent-green: hsl(143, 97%, 38%);
    --clr-neutral-offwhite: hsl(0, 0%, 91%);
+   --clr-neutral-darkgray: hsl(220, 4%, 31%);
    --clr-dark-gray: hsl(0, 0%, 25%);
+
    --ff-heading: 'Be Vietnam Pro', sans-serif;
    --ff-cursive: 'Caveat', cursive;
    --ff-body: 'Source Sans Pro', sans-serif;
@@ -99,25 +103,73 @@ ul[no-style]
 {
   list-style: none;
 }
-.main-title
-{
 
-    font-size: var(--fs-900);
-    padding: .25em;
-    width: fit-content;
-    color: white;
-    text-align: right;
-    background-color: var(--clr-primary-blue);
-    border-bottom-right-radius: 2rem;
-}
 main
 {
-    padding: 1rem 3rem;
-    max-height: 100vh;
+    
+    margin-top: 70px;
 }
 main > * + *
 {
     margin-top: 1.5rem;
+}
+.hero
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em;
+  gap: 1em;
+  background-color: var(--clr-secondary-blue);
+  position: relative;
+  overflow: hidden;
+}
+.hero::before
+{
+   content: '';
+   position: absolute;
+   background-color: var(--clr-lightblue);
+   z-index: 0;
+   clip-path: ellipse(50% 40% at 50% 50%);
+   width: 100%;
+   aspect-ratio: 1;
+   top: -125%;
+   right: -40%;  
+}
+.hero h1, .hero-input-wrap
+{
+  z-index: 1;
+}
+.hero h1
+{
+  font-size: var(--fs-700);
+  color: white;
+}
+.hero > *
+{
+   flex: 1 1 100%;
+}
+.hero-input-wrap
+{
+  display: flex;
+  justify-content: space-between;
+  max-width: 450px;
+  width: 80%;
+}
+.hero-input-wrap > *
+{
+  padding-block: .35em;
+}
+.hero-input
+{
+  flex: 1 1 80%;
+  padding-inline-start: .5em;
+}
+.hero-submit
+{
+  background-color: var(--clr-accent-green);
+  cursor: pointer;
+  padding-inline: 2em;
 }
 .calc-container
 {
@@ -125,11 +177,10 @@ main > * + *
     border: 2px solid black;
     border-radius: 5px;
     padding-block: 1rem;
+    margin-inline: 2rem;
     display: flex;
-    align-items: center;
     gap: 2rem;
     background-color: white;
-    
 }
 .calc-container::before
 {
@@ -141,18 +192,38 @@ main > * + *
 }
 .calc-container > *
 {
-    font-family: var(--ff-body);
-    flex-basis: 100%;
+  font-family: var(--ff-body);
+}
+.calc-container > *:first-child
+{
+    
+    flex: 1 1 67%;
+}
+.calc-container > *:nth-child(2)
+{
+    
+    flex: 1 1 33%;
 }
 .grid
 {
     display: grid;
 }
+.general-q
+{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.general-q > h1
+{
+  border-bottom: 2px solid gray;
+  padding-bottom: .5em;
+}
 .countries
 {
-    --grid-repeat: 5;
+    --grid-repeat: 3;
     grid-template-columns: repeat(var(--grid-repeat), 1fr);
-    gap: .5rem;
+    gap: 1rem;
     margin-bottom: 1em;
 }
 .country-list h1
@@ -166,16 +237,14 @@ main > * + *
 .country-list
 {
     overflow: auto;
+    display: flex;
+    gap: 5em;
     padding: 1.5em;
-    background-color: var(--clr-neutral-offwhite);
-    -webkit-box-shadow: 5px 5px 20px 2px rgba(0,0,0,0.5); 
-    box-shadow: 5px 5px 20px 2px rgba(0,0,0,0.5);
-    color: var(--clr-dark-gray);
 }
 .country-list h2
 {
     font-family: var(--ff-heading);
-    font-size: var(--fs-400);
+    font-size: var(--fs-500);
     font-weight: var(--fw-bold-body);
     margin-bottom: 1em;
 }
@@ -188,18 +257,21 @@ main > * + *
 }
 .country
 {
-    padding: .25em 0;
-    text-align: center;
-    border: 1px solid gray;
+    -webkit-box-shadow: 0px 5px 20px 0px #B5B5B5;
+    box-shadow: 0px 5px 20px 0px #B5B5B5;
+    padding-block: .25em; 
+    border: 1px solid var(--clr-neutral-offwhite);
+    padding-inline: .5em 2em;
     border-radius: .125rem;
+    width: 100%;
 }
 .country.active, .country:hover
 {
    border: 1px solid var(--clr-lightblue);
+
 }
 .country.active > h3, .country:hover > h3
 {
-    font-weight: var(--fw-bold-body);
     color: var(--clr-lightblue);
 }
 .calculator-options
@@ -232,7 +304,6 @@ main > * + *
     width: 100%;
     padding: 2.5em;
     max-width: 750px;
-    border: 2px solid red;
 }
 
 .range-label

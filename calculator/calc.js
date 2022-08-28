@@ -33,7 +33,7 @@ costValue.addEventListener('input', () =>
 async function addCountries()
 {
 
-    let queryList = ['[europe]', '[america]', '[oceania]']; // nu putem avea mai mult de 7 continente deeci vom hard coda pozitia lor in vector
+    let queryList = ['[europe]', '[america]', '[oceania]', '[asia]']; // nu putem avea mai mult de 7 continente deeci vom hard coda pozitia lor in vector
     for (let i = 0; i < countriesListByContinent.length; i++)
         for (let j = 0; j < countriesListByContinent[i].countries.length; j++)
         {
@@ -158,18 +158,33 @@ countriesListByContinent =
         ]
     },
     {
-        "continent": "Ocenia",
+        "continent": "Oceania",
         "countries": 
         [
             {
                 "name": "Australia",
-                "continent": "Oceania",
+                
                 "costs":
                 {
                    "min": 3800,
                    "max": 15500
                 },
                 "dorms": 2100
+            }
+        ]
+    },
+    {
+        "continent": "Asia",
+        "countries": 
+        [
+            {
+                "name": "Japonia",
+                "costs":
+                {
+                   "min": 4500,
+                   "max": 18500
+                },
+                "dorms": 2350
             }
         ]
     }

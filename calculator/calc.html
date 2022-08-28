@@ -48,30 +48,40 @@
         </nav>
     </header>
     <main>
-        <h1 class="main-title"> Calculator de finanțe</h1>
+    <div class="hero">
+        <h1 class="hero-cta"> Introdu costul facultății dorite</h1>
+        <div class="hero-input-wrap">
+            <input type="text" class="hero-input" placeholder="Va rugam introduceti doar cifre (in euro)" 
+             onfocus = "this.placeholder = ''" onblur = "this.placeholder = 'Va rugam introduceti doar cifre (in euro)'">
+            <input type="submit" class="hero-submit" value="">
+        </div>
+       
+    </div>
         <div class="calc-container">
-            
-            <div class="country-list">
-                <h1> Alege destinația de studiu</h1>
-                <div class="europe" europe>
-                    <h2 class="continent"> Europa </h2>
-                    <div class="countries grid">
+            <div class="general-q">
+                <h1> Întrebari Generale</h1>
+                <div class="country-list">
+                    <div class="europe" europe>
+                        <h2 class="continent"> Europa </h2>
+                        <div class="countries grid">
+                        </div>
                     </div>
+                    <div class="america" america>
+                        <h2 class="continent"> America </h2>  
+                        <div class="countries grid">
+                        </div>
+                     </div>
+                    <div class="asia" asia>
+                        <h2 class="continent"> Asia </h2>   
+                        <div class="countries grid">
+                        </div>
+                    </div>
+                    <div class="oceania" oceania>
+                        <h2 class="continent"> Oceania </h2>   
+                        <div class="countries grid">
+                        </div>
                 </div>
-                <div class="america" america>
-                    <h2 class="continent"> America </h2>  
-                    <div class="countries grid">
-                    </div>
-                 </div>
-                <div class="asia" asia>
-                    <h2 class="continent"> Asia </h2>   
-                    <div class="countries grid">
-                    </div>
-                </div>
-                <div class="oceania" oceania>
-                    <h2 class="continent"> Oceania </h2>   
-                    <div class="countries grid">
-                    </div>
+               
                 </div>
             </div>
             <div class="calculator-options">

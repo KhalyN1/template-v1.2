@@ -4,6 +4,7 @@
    --clr-gradient-darkblue: linear-gradient(to right, #141e30, #243b55);
    --clr-primary-red: hsl(0, 89%, 28%);
    --clr-accent-red: hsl(2, 82%, 41%);
+   --clr-dark-gray: hsl(0, 0%, 25%);
    --clr-light-red: hsl(2, 32%, 84%);
    --clr-neutral-offwhite: hsl(0, 0%, 91%);
    --clr-neutral-darkgrey: hsl(220, 4%, 31%);
@@ -309,6 +310,10 @@ main
   background-size: 110%;
 }
 
+.program[data-visible="false"]
+{
+  display: none;
+}
 
 
 
