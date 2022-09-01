@@ -168,20 +168,24 @@ main > * + *
 .hero-submit
 {
   background-color: var(--clr-accent-green);
+  color: white;
+  font-family: var(--ff-body);
+  font-weight: var(--fw-bold-body);
   cursor: pointer;
   padding-inline: 2em;
 }
 .calc-container
 {
     padding-inline: 1rem;
-    border: 2px solid black;
     border-radius: 5px;
     padding-block: 1rem;
     margin-inline: 2rem;
     display: flex;
+    justify-content: space-between;
     gap: 2rem;
     background-color: white;
 }
+
 .calc-container::before
 {
   content: '';
@@ -197,12 +201,12 @@ main > * + *
 .calc-container > *:first-child
 {
     
-    flex: 1 1 67%;
+     flex: 0 1 67%;
 }
 .calc-container > *:nth-child(2)
 {
     
-    flex: 1 1 33%;
+  flex: 0 1 25%;
 }
 .grid
 {
@@ -218,6 +222,64 @@ main > * + *
 {
   border-bottom: 2px solid gray;
   padding-bottom: .5em;
+  font-family: var(--ff-body);
+  
+}
+.calc-options
+{
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+}
+.option-name
+{
+  font-size: var(--fs-400);
+}
+.radio-option + .radio-option
+{
+  margin-top: .125em;
+}
+.radio-option
+{
+  position: relative;
+  padding-left: 20px;
+}
+.radio-option > *
+{
+  cursor: pointer;
+}
+.radio-option label
+{
+  font-size: var(--fs-300);
+}
+.radio-option input[type="radio"]
+{
+  display: none;
+}
+.radio-custom
+{
+  width: 1em;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 2px solid var(--clr-lightblue);
+  position: absolute;
+  left: 0;
+  top: 5px;
+}
+.radio-custom::before
+{
+  content: '';
+  display: none;
+  width: .65em;
+  aspect-ratio: 1;
+  background-color: var(--clr-lightblue);
+  position: absolute;
+  left: .05em;
+  top: .05em;
+  border-radius: 50%;
+}
+.radio-custom[aria-checked="true"]::before
+{
+  display: block;
 }
 .countries
 {
@@ -268,11 +330,69 @@ main > * + *
 .country.active, .country:hover
 {
    border: 1px solid var(--clr-lightblue);
+   -webkit-box-shadow: 0px 5px 20px 0px var(--clr-lightblue);
+   box-shadow: 0px 0px 50px 15px var(--clr-lightblue / 0.5);
 
 }
 .country.active > h3, .country:hover > h3
 {
     color: var(--clr-lightblue);
+}
+.costs-section
+{
+  padding-block: 1.25em 1.5em;
+  padding-inline: 1.5em;
+  height: fit-content;
+  background: -webkit-linear-gradient(to bottom, #17e7e1, #0088f1); 
+  background: linear-gradient(to bottom, #17e7e1, #0088f1);
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.costs-content
+{
+  box-shadow: 3px 3px 25px 2px #525252;
+  padding-block: 2em 8em;
+  padding-inline: 1em;
+  background-color: white;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.cost-heading
+{
+  text-align: center;
+  font-size: var(--fs-600);
+  font-weight: var(--fw-regular);
+}
+.cost-amount
+{
+  text-align: center;
+  font-size: var(--fs-900);
+  color: var(--clr-accent-green);
+  margin-bottom: 1em;
+}
+.cost-details
+{
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+.cost-line
+{
+  display: flex;
+  justify-content: space-between;
+}
+.cost-line > h2
+{
+  font-size: var(--fs-500);
+}
+.total-cost
+{
+  border-bottom: 1px solid var(--clr-neutral-darkgray);
+  padding-block: .5em;
 }
 .calculator-options
 {

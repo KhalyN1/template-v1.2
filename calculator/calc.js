@@ -1,18 +1,32 @@
 
-const range = document.getElementById('cost-range');
-const costValue = document.querySelector('.range-value');
-
 const RON_multiplier = 4.91;
 const USD_multiplier = 1.03;
 
-const dormsCheck = document.getElementById('dorms');
-const submit = document.querySelector('.submit');
-
 let countriesListByContinent;
 let selectedCountry;
-let dormsCost;
-costValue.placeholder = range.value;
-range.oninput = function() 
+
+document.querySelectorAll('.radio-option').forEach(radio => 
+    {
+       
+        radio.addEventListener('click', () =>
+        {
+            const radioItem =  radio.querySelector('.radio-custom');
+            const checked = radioItem.getAttribute('aria-checked');
+            const radioGroup = radio.parentElement.querySelectorAll('.radio-custom');
+            radioGroup.forEach(radioItem => radioItem.setAttribute('aria-checked', false));
+            if (checked === "true")
+                radioItem.setAttribute('aria-checked', false);
+            if (checked === "false")
+                radioItem.setAttribute('aria-checked', true);
+            
+                
+        })
+    })
+
+const costInput = document.querySelector('hero-input');
+const submit = document.querySelector('hero-submit');
+
+/*range.oninput = function() 
 {
   costValue.value = this.value;
 }
@@ -28,9 +42,9 @@ costValue.addEventListener('input', () =>
     let percent = range.value;
     let clr = `linear-gradient(to right, lightgray ${percent / 300}%, white ${percent / 300}%)`;
     range.style.background = clr;
-})
+})*/
 
-async function addCountries()
+async function AddCountries()
 {
 
     let queryList = ['[europe]', '[america]', '[oceania]', '[asia]']; // nu putem avea mai mult de 7 continente deeci vom hard coda pozitia lor in vector
@@ -47,20 +61,62 @@ async function addCountries()
             country.appendChild(countryName);
     
             country.addEventListener('click', () => {
-                dormsCheck.checked = false;
+                //dormsCheck.checked = false;
 
                 document.querySelectorAll('.country').forEach((countryItem) => // ineficient dar csf. Mai bine tine minte ultimul countryItem setat dar mi-e lene 
                 {
                     countryItem.classList.remove('active')
                 })
-
-                selectedCountry = countriesListByContinent[i].countries[j];
                 country.classList.add('active');
+                selectedCountry = countriesListByContinent[i].countries[j];
+                
             })
         }
 }
-window.onload = addCountries;
 
+function ResetCosts()
+{
+    document.querySelectorAll('.cost-line').forEach(costValue => costValue.querySelector('p').textContent = 'N/A');
+    document.querySelector('.cost-amount').textContent = 'N/A';
+}
+window.onload = () =>
+{
+    AddCountries();
+    ResetCosts();
+};
+
+function SubmitData()
+{
+    if (selectedCountry === null)
+        return;
+    
+    let costInput = document.querySelector('.hero-input');
+    
+    if (costInput.value === null || isNaN(costInput.value))
+        return;
+    
+    let valSchool = costInput.value;
+    let valMin = selectedCountry.costs.min;
+    let valMax = selectedCountry.costs.max;
+    let valDorms = selectedCountry.dorms;
+    let valFood = selectedCountry.food;
+    let valTransport = selectedCountry.transport;
+ 
+    let costAmount = document.querySelector('.cost-amount');
+    let totalCost = document.querySelector('.total-cost > p');
+    let schoolCost = document.querySelector('.main-cost > p');
+    let dormsCost = document.querySelector('.dorms-cost > p');
+    let addedCost = document.querySelector('.additional-cost > p');
+    
+
+    costAmount.textContent = `${valMin} - ${valMax}`;
+    totalCost.textContent = `${Math.ceil(valDorms + valFood + valTransport + parseInt(valSchool))}`;
+    schoolCost.textContent = `${valSchool}`;
+    dormsCost.textContent = `${valDorms}`;
+    addedCost.textContent = `${Math.ceil(valFood + valTransport)}`;
+}
+document.querySelector('.hero-submit').addEventListener('click', SubmitData);
+/*
 function submitData()
 {
     if (selectedCountry == null)
@@ -79,7 +135,7 @@ function submitData()
         localStorage.setItem('dorms', 0);     
 }
 submit.addEventListener('click', submitData);
-
+*/
 countriesListByContinent = 
 [
     {
@@ -93,7 +149,9 @@ countriesListByContinent =
                    "min": 2500,
                    "max": 1500
                 },
-                "dorms": 1500
+                "dorms": 1500,
+                "transport": 300,
+                "food": 300
             },
             {
                 "name": "Olanda",
@@ -102,7 +160,9 @@ countriesListByContinent =
                    "min": 2500,
                    "max": 15000
                 },
-                "dorms": 1500
+                "dorms": 1500,
+                "transport": 300,
+                "food": 300
             },
             {
                 "name": "Olanda",
@@ -111,7 +171,9 @@ countriesListByContinent =
                    "min": 2500,
                    "max": 15000
                 },
-                "dorms": 1500
+                "dorms": 1500,
+                "transport": 300,
+                "food": 300
             },
             {
                 "name": "Olanda",
@@ -120,7 +182,9 @@ countriesListByContinent =
                    "min": 2500,
                    "max": 15000
                 },
-                "dorms": 1500
+                "dorms": 1500,
+                "transport": 300,
+                "food": 300
             },
             {
                 "name": "Germania",
@@ -129,7 +193,9 @@ countriesListByContinent =
                    "min": 3500,
                    "max": 18000
                 },
-                "dorms": 2200
+                "dorms": 2200,
+                "transport": 300,
+                "food": 300
             },
             {
                 "name": "Germania",
@@ -138,7 +204,9 @@ countriesListByContinent =
                    "min": 3500,
                    "max": 18000
                 },
-                "dorms": 2200
+                "dorms": 2200,
+                "transport": 300,
+                "food": 300
             },
         ]
     },
@@ -153,7 +221,9 @@ countriesListByContinent =
                    "min": 4500,
                    "max": 20500
                 },
-                "dorms": 2700
+                "dorms": 2700,
+                "transport": 300,
+                "food": 300
             },
         ]
     },
@@ -169,7 +239,9 @@ countriesListByContinent =
                    "min": 3800,
                    "max": 15500
                 },
-                "dorms": 2100
+                "dorms": 2100,
+                "transport": 300,
+                "food": 300
             }
         ]
     },
@@ -184,7 +256,9 @@ countriesListByContinent =
                    "min": 4500,
                    "max": 18500
                 },
-                "dorms": 2350
+                "dorms": 2350,
+                "transport": 300,
+                "food": 300
             }
         ]
     }

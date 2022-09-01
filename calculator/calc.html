@@ -35,7 +35,7 @@
         <nav class="primary-nav" data-visible="false">
             <ul>
                 <li><a href="../programe/programe.html"> PROGRAME </a></li>
-                <li><a href="../ghid-parinte/ghid-parinte.html"> GHIDUL PARINTELUI </a></li>
+                <li><a href="../ghid-parinte/ghid-parinte.html"> GHIDUL PĂRINTELUI </a></li>
                 <li><a href="../ghid-elev/ghid-elev.html"> GHIDUL ELEVULUI  </a></li>
             </ul>
             <div class = "results-div">
@@ -51,15 +51,77 @@
     <div class="hero">
         <h1 class="hero-cta"> Introdu costul facultății dorite</h1>
         <div class="hero-input-wrap">
-            <input type="text" class="hero-input" placeholder="Va rugam introduceti doar cifre (in euro)" 
-             onfocus = "this.placeholder = ''" onblur = "this.placeholder = 'Va rugam introduceti doar cifre (in euro)'">
-            <input type="submit" class="hero-submit" value="">
+            <input type="text" class="hero-input" placeholder="Vă rugăm introduceți doar cifre (in euro)" 
+             onfocus = "this.placeholder = ''" onblur = "this.placeholder = 'Vă rugăm introduceți doar cifre (in euro)'">
+            <input type="submit" class="hero-submit" value="GO">
         </div>
-       
     </div>
         <div class="calc-container">
             <div class="general-q">
                 <h1> Întrebari Generale</h1>
+                <div class="calc-options grid">
+                   <div class="option">
+                    <h2 class="option-name">Tipul de housing</h2>
+                    <div class="radio-option">
+                        <input type="radio"> 
+                        <span class="radio-custom" aria-checked="false"></span>
+                        <label for="">  Casă </label> 
+                    </div>
+                      <div class="radio-option">
+                        <input type="radio"> 
+                        <span class="radio-custom" aria-checked="false"></span>
+                        <label for=""> Cămin </label>    
+                    </div>
+                   </div>
+                   <div class="option">
+                    <h2 class="option-name"> Doriți să învățați limba țării de studiu?</h2>
+                    <div class="radio-option">
+                        <input type="radio"> 
+                        <span class="radio-custom" aria-checked="false"></span>
+                        <label for="">  Da </label> 
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio"> 
+                        <span class="radio-custom" aria-checked="false"></span>
+                        <label for=""> Nu </label> 
+                    </div>
+                   </div>
+                   <div class="option">
+                    <h2 class="option-name"> Veți achita singur sau cu încă o persoană?</h2>
+                    <div class="radio-option">
+                        <input type="radio"> 
+                        <span class="radio-custom" aria-checked="false"></span>
+                        <label for=""> Singur </label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio">
+                        <span class="radio-custom" aria-checked="false"></span> 
+                        <label for=""> Încă o persoană  </label> 
+                    </div>
+                   </div>
+                   <div class="option">
+                    <h2 class="option-name"> De câte ori vă veți întoarce în țară?</h2>
+                    <div class="radio-option">
+                        <input type="radio"> 
+                        <span class="radio-custom" aria-checked="false"></span>
+                        <label for=""> o dată </label> 
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio"> 
+                        <span class="radio-custom" aria-checked="false"></span>
+                        <label for=""> de 2-3 ori  </label> 
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio"> 
+                        <span class="radio-custom" aria-checked="false"></span>
+                        <label for=""> de 3-4 ori  </label> 
+                        
+                    </div>
+                   </div>
+                   <div class="option program-duration">
+                    <h2 class="option-name"> Cât timp va dura programul de studiu? </h2>
+                   </div>
+                </div>
                 <div class="country-list">
                     <div class="europe" europe>
                         <h2 class="continent"> Europa </h2>
@@ -84,7 +146,32 @@
                
                 </div>
             </div>
-            <div class="calculator-options">
+            <div class="costs-section">
+                <div class="costs-content">
+                    <h2 class="cost-heading"> Costuri Lunare </h2>
+                <h2 class="cost-amount"></h2>
+                <div class="cost-details">
+                    <div class="total-cost cost-line">
+                        <h2> Costuri totale </h2>
+                        <p> </p>
+                    </div>
+                    <div class="main-cost cost-line">
+                        <h2> Cost școlarizare / lună </h2>
+                        <p> </p>
+                    </div>
+                    <div class="dorms-cost cost-line">
+                        <h2> Cost cămin / lună </h2>
+                        <p> </p>
+                    </div>
+                    <div class="additional-cost cost-line">
+                        <h2> Costuri adiționale / lună </h2>
+                        <p> </p>
+                    </div>
+                </div>
+                </div>      
+            </div>
+            <!--
+                 <div class="calculator-options">
                  <div class="range">
                     <label for="cost-range" class="range-label"> Costul Facultății </label>
                         <input type="range"  min="3000" max="30000" value="" id="cost-range" step="1000">
@@ -108,7 +195,10 @@
                  </div> 
                  <a href="" class="submit" target="_blank">  Submit </a>
             </div>
+            -->
         </div>
+            
+           
         <div class="tips-section">
          <h2 class="tip"> " Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla hic ab incidunt quaerat voluptas neque suscipit nam dolore deleniti ratione. "</h2>
         </div>
