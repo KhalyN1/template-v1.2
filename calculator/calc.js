@@ -88,6 +88,8 @@ const langRadioGroup = document.querySelector('.option.lang');
 const paymentRadioGroup = document.querySelector('.option.payment');
 const flightRadioGroup = document.querySelector('.option.flight');
 
+let flightModifier;
+let paymentModifier;
 
 function GetRadioData()
 {
@@ -101,6 +103,7 @@ function GetRadioData()
     const paymentRadioGroup = document.querySelector('.option.payment');
     const flightRadioGroup = document.querySelector('.option.flight');
 
+    // in baza de date o sa mai fie o variabila de "house" in vectorul de housingCosts si valoarea input-ului o sa fie index-ul la care se afla
     housingRadioGroup.querySelectorAll('input[type="radio"').forEach(radio =>
     {
         if (radio.getAttribute('aria-checked') === "true")
@@ -108,6 +111,8 @@ function GetRadioData()
             housingSelected = true;
         }
     })
+
+    //o sa mai fie o variabila "lang" si daca valoarea input-ului e 'da' adauga si costul meditatiilor la costuri aditionale
     langRadioGroup.querySelectorAll('input[type="radio"').forEach(radio =>
     {
         if (radio.getAttribute('aria-checked') === "true")
@@ -115,18 +120,25 @@ function GetRadioData()
             langSelected = true; 
         }
     })
+
+    //imparte de camin / casa la 2 daca e cu inca o persoana
     paymentRadioGroup.querySelectorAll('input[type="radio"').forEach(radio =>
     {
         if (radio.getAttribute('aria-checked') === "true")
         {
             paymentSelected = true;
+            paymentModifier = radio.value;
+            console.log(paymentModifier);
         }
     })
+    //inca o variabla de "flight costs" care inmultita cu nr de zboruri selectat
     flightRadioGroup.querySelectorAll('input[type="radio"').forEach(radio =>
     {
         if (radio.getAttribute('aria-checked') === "true")
         {
             flightSelected = true;  
+            flightModifier = radio.value;
+            console.log(flightModifier);
         }
     })
 
@@ -155,7 +167,6 @@ function SubmitData()
     
     let data = GetRadioData();
     console.log(data);
-
     if (!data) 
       return;
     
