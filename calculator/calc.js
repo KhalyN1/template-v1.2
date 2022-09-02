@@ -136,8 +136,6 @@ function GetRadioData()
         return false;
     }
          
-   
-
     console.log(housingSelected);
     console.log(langSelected);
     console.log(paymentSelected);
