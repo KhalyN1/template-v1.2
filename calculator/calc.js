@@ -10,16 +10,15 @@ document.querySelectorAll('.radio-option').forEach(radio =>
        
         radio.addEventListener('click', () =>
         {
-            const radioItem =  radio.querySelector('.radio-custom');
-            const checked = radioItem.getAttribute('aria-checked');
-            const radioGroup = radio.parentElement.querySelectorAll('.radio-custom');
+            const checked = radio.getAttribute('aria-checked');
+            const radioGroup = radio.parentElement.querySelectorAll('.radio-option');
             radioGroup.forEach(radioItem => radioItem.setAttribute('aria-checked', false));
             if (checked === "true")
-                radioItem.setAttribute('aria-checked', false);
+                radio.setAttribute('aria-checked', false);
+                radio.querySelector('input[type="radio"]').setAttribute('aria-checked', false);
             if (checked === "false")
-                radioItem.setAttribute('aria-checked', true);
-            
-                
+                radio.setAttribute('aria-checked', true);
+                radio.querySelector('input[type="radio"]').setAttribute('aria-checked', true);
         })
     })
 
@@ -51,7 +50,7 @@ async function AddCountries()
     for (let i = 0; i < countriesListByContinent.length; i++)
         for (let j = 0; j < countriesListByContinent[i].countries.length; j++)
         {
-            console.log(countriesListByContinent[i].countries[j].name)
+            //console.log(countriesListByContinent[i].countries[j].name)
             let country = document.createElement('div');
             country.classList.add('country');
             let countryName = document.createElement('h3');
@@ -84,16 +83,83 @@ window.onload = () =>
     AddCountries();
     ResetCosts();
 };
+const housingRadioGroup = document.querySelector('.option.housing');
+const langRadioGroup = document.querySelector('.option.lang');
+const paymentRadioGroup = document.querySelector('.option.payment');
+const flightRadioGroup = document.querySelector('.option.flight');
 
+
+function GetRadioData()
+{
+    let selectedAll;
+    let housingSelected;
+    let langSelected;
+    let paymentSelected;
+    let flightSelected;
+    const housingRadioGroup = document.querySelector('.option.housing');
+    const langRadioGroup = document.querySelector('.option.lang');
+    const paymentRadioGroup = document.querySelector('.option.payment');
+    const flightRadioGroup = document.querySelector('.option.flight');
+
+    housingRadioGroup.querySelectorAll('input[type="radio"').forEach(radio =>
+    {
+        if (radio.getAttribute('aria-checked') === "true")
+        {
+            housingSelected = true;
+        }
+    })
+    langRadioGroup.querySelectorAll('input[type="radio"').forEach(radio =>
+    {
+        if (radio.getAttribute('aria-checked') === "true")
+        {
+            langSelected = true; 
+        }
+    })
+    paymentRadioGroup.querySelectorAll('input[type="radio"').forEach(radio =>
+    {
+        if (radio.getAttribute('aria-checked') === "true")
+        {
+            paymentSelected = true;
+        }
+    })
+    flightRadioGroup.querySelectorAll('input[type="radio"').forEach(radio =>
+    {
+        if (radio.getAttribute('aria-checked') === "true")
+        {
+            flightSelected = true;  
+        }
+    })
+
+    if (!langSelected  || !flightSelected || !housingSelected || !paymentSelected)
+    {
+        alert('selecteaza tot');
+        return false;
+    }
+         
+   
+
+    console.log(housingSelected);
+    console.log(langSelected);
+    console.log(paymentSelected);
+    console.log(flightSelected);
+
+    return true;
+}
 function SubmitData()
 {
-    if (selectedCountry === null)
+     if (selectedCountry === null)
         return;
     
     let costInput = document.querySelector('.hero-input');
     
     if (costInput.value === null || isNaN(costInput.value))
         return;
+    
+    let data = GetRadioData();
+    console.log(data);
+
+    if (!data) 
+      return;
     
     let valSchool = costInput.value;
     let valMin = selectedCountry.costs.min;
