@@ -255,7 +255,7 @@ nav li.active a
 .search-btn
 {
     background-color: var(--clr-primary-blue);
-    background-image: url('./imgs/icons8-search-30.png');
+    background-image: url('../imgs/icons8-search-30.png');
     background-size: 70%;
     background-repeat: no-repeat;
     background-position: center;
