@@ -1,47 +1,42 @@
+const housingRadioGroup = document.querySelector('.option.housing');
+const langRadioGroup = document.querySelector('.option.lang');
+const paymentRadioGroup = document.querySelector('.option.payment');
+const flightRadioGroup = document.querySelector('.option.flight');
+const costInput = document.querySelector('hero-input');
+const submit = document.querySelector('hero-submit');
 
-const RON_multiplier = 4.91;
-const USD_multiplier = 1.03;
-
+let flightModifier;
+let paymentModifier;
+let housingModifier;
+let langModifier; 
 let countriesListByContinent;
 let selectedCountry;
+
+function ResetCosts()
+{
+    document.querySelectorAll('.cost-line').forEach(costValue => costValue.querySelector('p').textContent = 'N/A');
+    document.querySelector('.cost-amount').textContent = 'N/A';
+}
+window.onload = () =>
+{
+    AddCountries();
+    ResetCosts();
+};
 
 document.querySelectorAll('.radio-option').forEach(radio => 
     {
        
         radio.addEventListener('click', () =>
         {
-            const checked = radio.getAttribute('aria-checked');
+            let checked = radio.getAttribute('aria-checked');
             const radioGroup = radio.parentElement.querySelectorAll('.radio-option');
             radioGroup.forEach(radioItem => radioItem.setAttribute('aria-checked', false));
             if (checked === "true")
                 radio.setAttribute('aria-checked', false);
-                radio.querySelector('input[type="radio"]').setAttribute('aria-checked', false);
-            if (checked === "false")
+            else
                 radio.setAttribute('aria-checked', true);
-                radio.querySelector('input[type="radio"]').setAttribute('aria-checked', true);
         })
     })
-
-const costInput = document.querySelector('hero-input');
-const submit = document.querySelector('hero-submit');
-
-/*range.oninput = function() 
-{
-  costValue.value = this.value;
-}
-range.addEventListener('mousemove',  () =>
-{
-    let percent = range.value;
-    let clr = `linear-gradient(to right, lightgray ${percent / 300}%, white ${percent / 300}%)`;
-    range.style.background = clr;
-})
-costValue.addEventListener('input', () => 
-{
-    range.value = costValue.value;    
-    let percent = range.value;
-    let clr = `linear-gradient(to right, lightgray ${percent / 300}%, white ${percent / 300}%)`;
-    range.style.background = clr;
-})*/
 
 async function AddCountries()
 {
@@ -73,27 +68,8 @@ async function AddCountries()
         }
 }
 
-function ResetCosts()
-{
-    document.querySelectorAll('.cost-line').forEach(costValue => costValue.querySelector('p').textContent = 'N/A');
-    document.querySelector('.cost-amount').textContent = 'N/A';
-}
-window.onload = () =>
-{
-    AddCountries();
-    ResetCosts();
-};
-const housingRadioGroup = document.querySelector('.option.housing');
-const langRadioGroup = document.querySelector('.option.lang');
-const paymentRadioGroup = document.querySelector('.option.payment');
-const flightRadioGroup = document.querySelector('.option.flight');
-
-let flightModifier;
-let paymentModifier;
-
 function GetRadioData()
 {
-    let selectedAll;
     let housingSelected;
     let langSelected;
     let paymentSelected;
@@ -103,38 +79,37 @@ function GetRadioData()
     const paymentRadioGroup = document.querySelector('.option.payment');
     const flightRadioGroup = document.querySelector('.option.flight');
 
-    // in baza de date o sa mai fie o variabila de "house" in vectorul de housingCosts si valoarea input-ului o sa fie index-ul la care se afla
     housingRadioGroup.querySelectorAll('input[type="radio"').forEach(radio =>
     {
-        if (radio.getAttribute('aria-checked') === "true")
+        if (radio.parentElement.getAttribute('aria-checked') === "true")
         {
             housingSelected = true;
+            housingModifier = radio.value;
         }
     })
 
-    //o sa mai fie o variabila "lang" si daca valoarea input-ului e 'da' adauga si costul meditatiilor la costuri aditionale
     langRadioGroup.querySelectorAll('input[type="radio"').forEach(radio =>
     {
-        if (radio.getAttribute('aria-checked') === "true")
+        if (radio.parentElement.getAttribute('aria-checked') === "true")
         {
             langSelected = true; 
+            langModifier = radio.value;
         }
     })
 
-    //imparte de camin / casa la 2 daca e cu inca o persoana
     paymentRadioGroup.querySelectorAll('input[type="radio"').forEach(radio =>
     {
-        if (radio.getAttribute('aria-checked') === "true")
+        if (radio.parentElement.getAttribute('aria-checked') === "true")
         {
             paymentSelected = true;
             paymentModifier = radio.value;
-            console.log(paymentModifier);
+            console.log("payment modifier: "+ paymentModifier);
         }
     })
-    //inca o variabla de "flight costs" care inmultita cu nr de zboruri selectat
+
     flightRadioGroup.querySelectorAll('input[type="radio"').forEach(radio =>
     {
-        if (radio.getAttribute('aria-checked') === "true")
+        if (radio.parentElement.getAttribute('aria-checked') === "true")
         {
             flightSelected = true;  
             flightModifier = radio.value;
@@ -173,44 +148,28 @@ function SubmitData()
     let valSchool = costInput.value;
     let valMin = selectedCountry.costs.min;
     let valMax = selectedCountry.costs.max;
-    let valDorms = selectedCountry.dorms;
+    let valDorms = ((housingModifier == 0) ? selectedCountry.housingCosts.house / paymentModifier : selectedCountry.housingCosts.dorms / paymentModifier);
     let valFood = selectedCountry.food;
     let valTransport = selectedCountry.transport;
- 
+    let valFlight = selectedCountry.flightCost * flightModifier;
+    let valLang = ((langModifier == 1)? selectedCountry.lang : 0)
     let costAmount = document.querySelector('.cost-amount');
     let totalCost = document.querySelector('.total-cost > p');
     let schoolCost = document.querySelector('.main-cost > p');
     let dormsCost = document.querySelector('.dorms-cost > p');
+    let tripCost = document.querySelector('.trips-cost > p');
     let addedCost = document.querySelector('.additional-cost > p');
     
 
     costAmount.textContent = `${valMin} - ${valMax}`;
-    totalCost.textContent = `${Math.ceil(valDorms + valFood + valTransport + parseInt(valSchool))}`;
+    totalCost.textContent = `${Math.ceil(valDorms + valFood + valTransport + parseInt(valSchool) + valFlight + valLang)}`;
     schoolCost.textContent = `${valSchool}`;
     dormsCost.textContent = `${valDorms}`;
-    addedCost.textContent = `${Math.ceil(valFood + valTransport)}`;
+    tripCost.textContent = `${valFlight}`;
+    addedCost.textContent = `${Math.ceil(valFood + valTransport + valLang)}`;
 }
 document.querySelector('.hero-submit').addEventListener('click', SubmitData);
-/*
-function submitData()
-{
-    if (selectedCountry == null)
-        return;
 
-    submit.href = `./countries/${selectedCountry.name.toLowerCase()}.html`
-    dormsCost = selectedCountry.dorms;
-    localStorage.setItem('cost', costValue.value);
-    localStorage.setItem('min', selectedCountry.costs.min);
-    localStorage.setItem('max', selectedCountry.costs.max);
-    console.log(localStorage.getItem('cost'));
-
-    if(dormsCheck.checked)
-        localStorage.setItem('dorms', dormsCost);
-    else
-        localStorage.setItem('dorms', 0);     
-}
-submit.addEventListener('click', submitData);
-*/
 countriesListByContinent = 
 [
     {
@@ -224,9 +183,15 @@ countriesListByContinent =
                    "min": 2500,
                    "max": 1500
                 },
-                "dorms": 1500,
+                "housingCosts":
+                {
+                    "house": 2500,
+                    "dorms": 1500
+                },
                 "transport": 300,
-                "food": 300
+                "food": 300,
+                "lang": 300,
+                "flightCost" : 500
             },
             {
                 "name": "Olanda",
@@ -235,9 +200,15 @@ countriesListByContinent =
                    "min": 2500,
                    "max": 15000
                 },
-                "dorms": 1500,
+                "housingCosts":
+                {
+                    "house": 2500,
+                    "dorms": 1500
+                },
                 "transport": 300,
-                "food": 300
+                "food": 300,
+                "lang": 300,
+                "flightCost" : 500
             },
             {
                 "name": "Olanda",
@@ -246,9 +217,15 @@ countriesListByContinent =
                    "min": 2500,
                    "max": 15000
                 },
-                "dorms": 1500,
+                "housingCosts":
+                {
+                    "house": 2500,
+                    "dorms": 1500
+                },
                 "transport": 300,
-                "food": 300
+                "food": 300,
+                "lang": 300,
+                "flightCost" : 500
             },
             {
                 "name": "Olanda",
@@ -257,9 +234,15 @@ countriesListByContinent =
                    "min": 2500,
                    "max": 15000
                 },
-                "dorms": 1500,
+                "housingCosts":
+                {
+                    "house": 2500,
+                    "dorms": 1500
+                },
                 "transport": 300,
-                "food": 300
+                "food": 300,
+                "lang": 300,
+                "flightCost" : 500
             },
             {
                 "name": "Germania",
@@ -268,9 +251,15 @@ countriesListByContinent =
                    "min": 3500,
                    "max": 18000
                 },
-                "dorms": 2200,
+                "housingCosts":
+                {
+                    "house": 2500,
+                    "dorms": 1500
+                },
                 "transport": 300,
-                "food": 300
+                "food": 300,
+                "lang": 300,
+                "flightCost" : 500
             },
             {
                 "name": "Germania",
@@ -279,9 +268,15 @@ countriesListByContinent =
                    "min": 3500,
                    "max": 18000
                 },
-                "dorms": 2200,
+                "housingCosts":
+                {
+                    "house": 2500,
+                    "dorms": 1500
+                },
                 "transport": 300,
-                "food": 300
+                "food": 300,
+                "lang": 300,
+                "flightCost" : 500
             },
         ]
     },
@@ -296,9 +291,15 @@ countriesListByContinent =
                    "min": 4500,
                    "max": 20500
                 },
-                "dorms": 2700,
+                "housingCosts":
+                {
+                    "house": 2500,
+                    "dorms": 1500
+                },
                 "transport": 300,
-                "food": 300
+                "food": 300,
+                "lang": 300,
+                "flightCost" : 500
             },
         ]
     },
@@ -314,9 +315,15 @@ countriesListByContinent =
                    "min": 3800,
                    "max": 15500
                 },
-                "dorms": 2100,
+                "housingCosts":
+                {
+                    "house": 2500,
+                    "dorms": 1500
+                },
                 "transport": 300,
-                "food": 300
+                "food": 300,
+                "lang": 300,
+                "flightCost" : 500
             }
         ]
     },
@@ -331,9 +338,15 @@ countriesListByContinent =
                    "min": 4500,
                    "max": 18500
                 },
-                "dorms": 2350,
+                "housingCosts":
+                {
+                    "house": 2500,
+                    "dorms": 1500
+                },
                 "transport": 300,
-                "food": 300
+                "food": 300,
+                "lang": 300,
+                "flightCost" : 500
             }
         ]
     }
