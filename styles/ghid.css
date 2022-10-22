@@ -134,6 +134,7 @@ ul[list-none]
     margin-top: 5vh;
     padding: 2rem .5rem;
     height: 95%;
+    line-height: 2;
     max-width: 60%;
 }
 main h1
