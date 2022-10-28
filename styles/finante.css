@@ -182,12 +182,15 @@ span
     margin-inline: auto;
 }
 
-button.continue
+a.continue
 {
     color: white;
     background-color: var(--clr-yellow);
-    padding: .25em .5em;
+    font-family: var(--ff-body);
+    padding: .5em .5em;
+    font-weight: var(--fw-bold-body);
     border-radius: .75rem;
+    cursor: pointer;
 }
 .newsletter-section
 {

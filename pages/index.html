@@ -10,8 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="../styles/main.css">
-    <link rel="stylesheet" href="../styles/nav.css">
+    <!--<link rel="stylesheet" href="../styles/nav.css">-->
     <script src="../script.js" defer></script>
     <!----><script src="../scripts/main.js" defer></script>
     
@@ -20,34 +22,26 @@
 <body>
     <header class="primary-header">
         <div class="brand">
-            <div class="socials">
+            <!-- <div class="socials">
                 <a href=""><img src="../imgs/instagram.png" alt="instagram" class="socials-icon"></a>
                 <a href=""><img src="../imgs/facebook.png" alt="facebook" class="socials-icon"></a>
                 <a href=""><img src="../imgs/gmail.png" alt="gmail" class="socials-icon"></a>
-            </div>
-            <a href="#" id="brand-link"> HOME </a>
+            </div>-->
+           
+            <a href="#" id="brand-link"> Unirise </a>
         </div>
 
         <button class="mobile-nav-toggle" aria-expanded="false">
             <span class="line"></span>
             <span class="line"></span>
             <span class="line"></span>
-      </button>
+        </button>
         <nav class="primary-nav" data-visible="false">
             <ul>
-                <li><a href="./programe.html"> PROGRAME </a></li>
+                <li><a href="./finante.html"> FINANTE </a></li>
                 <li><a href="./ghid-parinte.html"> GHIDUL PARINTELUI </a></li>
                 <li><a href="./ghid-elev.html"> GHIDUL ELEVULUI  </a></li>
             </ul>
-            <div class = "search-container">
-                <div class="search-wrap" visible="false">
-                    <input type = "text" id="search" placeholder="Search.." onfocus="GetArticles()" onblur = "ClearResults()" visible="false">
-                    <button class="search-btn"></button>
-                </div> 
-                <div class = "results-display" visible = "false"></div>
-            </div>
-
-            
         </nav>
     </header>
     <div class="popup">
@@ -66,129 +60,19 @@
     
     <main>
         <section class="hero">
-             <h1>  Cu ce te putem ajuta?</h1>
-             <div class="hero-search-wrap">
-                <div class="hero-search">
-                    <input type = "text" id="hero-search-input" placeholder="Search.." onfocus="GetArticles()" onblur = "ClearResults()">
+            <div class="results-div">
+             <div class="search-wrap" visible="false">
+                    <input type = "text" id="search" placeholder="Search..." onfocus="GetArticles()" onblur = "ClearResults()" visible="false">
                     <button class="search-btn"></button>
-                </div>
              </div>
-             <div class="hero-tabs">
-                <div class="hero-tab">
-                    <div class="tab-img"></div>
-                    <h1> Caută </h1>
-                    <p> informația de care ai nevoie </p>
-                </div>
-                <div class="hero-tab">
-                    <div class="tab-img"></div>
-                    <h1> Descoperă </h1>
-                    <p> ghidurile noastre detaliate </p>
-                </div>
-                <div class="hero-tab">
-                    <div class="tab-img"></div>
-                    <h1> Alege </h1>
-                    <p> ce ți se potrivește </p>
-                </div>
+             <div class="results-display" visible="false"></div>
              </div>
-        </section>
-        <section class="container">
-            <div class="three-tabs">
-                <div class="tab"> 
-                <div class="tab-text">
-                    <h2> Caută </h2>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero, libero ex architecto magnam amet rem suscipit cum perferendis veritatis delectus necessitatibus praesentium reprehenderit doloremque eius odit voluptas similique illo beatae pariatur maiores in debitis eligendi, atque unde! Eveniet possimus enim ipsum nulla distinctio, laborum voluptate voluptatum. Sequi et deleniti suscipit</p>
-                </div>
-               </div>
-                <div class="tab">
-                    <div class="tab-text">
-                        <h2> Descoperă </h2>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero, libero ex architecto magnam amet rem suscipit cum perferendis veritatis delectus necessitatibus praesentium reprehenderit doloremque eius odit voluptas similique illo beatae pariatur maiores in debitis eligendi, atque unde! Eveniet possimus enim ipsum nulla distinctio, laborum voluptate voluptatum. Sequi et deleniti suscipit.</p>
-                    </div>
-                </div>
-                <div class="tab">
-                    <div class="tab-text">
-                        <h2> Alege </h2>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero, libero ex architecto magnam amet rem suscipit cum perferendis veritatis delectus necessitatibus praesentium reprehenderit doloremque eius odit voluptas similique illo beatae pariatur maiores in debitis eligendi, atque unde! Eveniet possimus enim ipsum nulla distinctio, laborum voluptate voluptatum. Sequi et deleniti suscipit</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="slider-container">
-                    <button class="handle left">
-                        <img src="../imgs/arrow-left.png" alt="arrow-left" class="arrow">
-                    </button>
-                    
-                     <div class="slider"></div>
-                 <button class="handle right">
-                    <img src="../imgs/arrow-right.png" alt="arrow-right" class="arrow">
-                </button>   
-            </div>
-            <div class="progress-bar"></div>  
-            </div>
-        </section>
-     <section class="options">
-        <h1 class="title"> Explorează opțiunile </h1>
-        <div class="img-slider">
-            <div class="img-slider-content">
-                <div class="button-section">
-                     <button class="slider-btn"></button>
-                     <button class="slider-btn"></button>
-                     <button class="slider-btn"></button>
-                     <button class="slider-btn"></button>
-                     <button class="slider-btn"></button>
-                     <button class="slider-btn"></button>
-                     <button class="slider-btn"></button>
-                     <button class="slider-btn"></button>
-                     <button class="slider-btn"></button>
-                     <button class="slider-btn"></button>
-                     <button class="slider-btn"></button>
-                     <button class="slider-btn"></button> 
-                </div>
-                <div class="button-section">
-                    <button class="slider-btn"></button>
-                    <button class="slider-btn"></button>
-                    <button class="slider-btn"></button>
-                    <button class="slider-btn"></button>
-                    <button class="slider-btn"></button>
-                    <button class="slider-btn"></button>    
-                    <button class="slider-btn"></button>
-                    <button class="slider-btn"></button>
-                    <button class="slider-btn"></button>
-                    <button class="slider-btn"></button>
-                    <button class="slider-btn"></button>
-                    <button class="slider-btn"></button> 
-                </div>
-                <div class="button-section">
-                    <button class="slider-btn"></button>
-                    <button class="slider-btn"></button>
-                    <button class="slider-btn"></button>
-                    <button class="slider-btn"></button>
-                    <button class="slider-btn"></button>
-                    <button class="slider-btn"></button> 
-                    <button class="slider-btn"></button>
-                    <button class="slider-btn"></button>
-                    <button class="slider-btn"></button>
-                    <button class="slider-btn"></button>
-                    <button class="slider-btn"></button>
-                    <button class="slider-btn"></button>    
-                </div>
-                <div class="button-section">
-                    <button class="slider-btn"></button>
-                    <button class="slider-btn"></button>
-                    <button class="slider-btn"></button>
-                    <button class="slider-btn"></button>
-                    <button class="slider-btn"></button>
-                    <button class="slider-btn"></button>  
-                    <button class="slider-btn"></button>
-                    <button class="slider-btn"></button>
-                    <button class="slider-btn"></button>
-                    <button class="slider-btn"></button>
-                    <button class="slider-btn"></button>
-                    <button class="slider-btn"></button>   
-                </div>
-            </div>
+        <div class="hero-text">
+            <h1> Prima platformă digitală de consiliere </h1>
+            <h2> Un click distanță între tine și viitorul tău </h2>
         </div>
-     </section>
+        </section>
+    
      <section class="about">
         <div class="mission">
             <h1 class="title">
@@ -197,14 +81,6 @@
             <p class="text">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia nemo dolore animi optio. Voluptatum asperiores ducimus cumque qui consequuntur iste. Delectus deleniti doloremque explicabo distinctio, praesentium molestias laudantium impedit. Deleniti illo repudiandae quo perspiciatis repellat numquam. Delectus, quibusdam veritatis? Beatae error, officiis voluptate numquam, voluptates earum dolores nihil debitis doloribus provident rerum, nulla dicta? Aut perspiciatis minima natus nulla esse, modi voluptatibus, dicta doloremque inventore necessitatibus ratione voluptate iure sint facere, quis neque a harum perferendis porro dolorem ipsa rem molestiae accusamus. Blanditiis minima, totam facere ullam consequatur, accusantium voluptas cum velit omnis sed at commodi, nobis temporibus nemo tenetur?Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat possimus exercitationem, cumque cupiditate hic quis sit amet mollitia? Dolores tenetur accusamus mollitia asperiores, obcaecati quam.
             </p>
-        </div>
-        <div class="partners">
-            <a href="https://highedu.ro/" target="_blank" class="highedu-link"> 
-                <img src="../imgs/HighEdu-small-logo.png" alt="" class="partner-card" id="highedu"> 
-            </a>
-            <a href="https://highedu.ro/" target="_blank" class="gc-link"> 
-                <img src="../imgs/gc-logo.png" alt="" class="partner-card" id="gc">
-            </a>
         </div>
      </section>
          

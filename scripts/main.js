@@ -1,4 +1,5 @@
 //let articles = [];
+/*
 fetchAPI();
 document.querySelectorAll('.progress-bar').forEach(calculateProgress);
 const checkProgress = () => 
@@ -123,4 +124,26 @@ function handleClick(handle)
               
         }
 }
+*/
 
+const header = document.querySelector('.primary-header');
+const hero = document.querySelector('.hero');
+
+const options = { rootMargin: "-450px 0px 0px 0px"};
+const observer = new IntersectionObserver(
+  function(entries, observer)
+  {
+  entries.forEach(entry => 
+  {
+    if (!entry.isIntersecting)
+    {
+      header.classList.add('nav-scrolled');
+    }
+    else
+    {
+      header.classList.remove('nav-scrolled');
+    }
+  })
+ }, options);
+
+ observer.observe(hero);

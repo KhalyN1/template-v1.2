@@ -156,19 +156,22 @@ ul[no-style]
 .brand
 {
 
-  border-right: 1px solid lightgray;
-  
+  display: flex;
+  align-items: center;
 }
 #brand-link
 {
-    margin-top: .25em;
     padding-inline: 7rem;
-    font-size: var(--fs-600);
-    display: flex;
+    font-size: var(--fs-700);
     font-weight: var(--fw-bold-heading);
     font-family: var(--ff-heading);
-    color: var(--clr-accent-red);
+    color: var(--clr-primary-blue);
     
+}
+#brand-link::first-letter
+{
+  font-size: var(--fs-900);
+  color: var(--clr-accent-red);
 }
 header .socials
 {
@@ -192,7 +195,7 @@ header .socials
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
+    width: fit-content;
     padding-inline-end: 2rem;
     z-index: 99;
 }

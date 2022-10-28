@@ -3,7 +3,7 @@ const navToggle = document.querySelector(".mobile-nav-toggle")
 const searchButton = document.querySelector('.search-btn');
 const searchWrap = document.querySelector('.search-wrap');
 const searchDisplay = document.querySelector(".results-display");
-const search = document.getElementById('search');
+const search = document.querySelector('#search');
 
 //const closeButton = document.querySelector('.close');
 
@@ -67,7 +67,7 @@ search.addEventListener("input", () =>
     }
 });
 
-// Seachbar functions
+// Searchbar functions
 
 function CompareArticleTags(search, tags)
 {
