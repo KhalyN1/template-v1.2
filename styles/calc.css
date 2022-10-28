@@ -439,7 +439,6 @@ main > * + *
 }
 #cost-range
 {
-    -webkit-appearance: none;
     border: 1px solid lightgray;
     border-radius: 2rem;
     width: 100%;

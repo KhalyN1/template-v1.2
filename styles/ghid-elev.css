@@ -160,6 +160,14 @@ main > * + *
     align-items: center;
     gap: 5rem;
 }
+.map svg
+{
+    width: 75%;
+}
+.map-circle:hover{
+    opacity: 0.75;
+}
+
 .map h1
 {
     font-size: var(--fs-900);
